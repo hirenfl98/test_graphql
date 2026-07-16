@@ -1,0 +1,88 @@
+api:
+  name: "Supabase Auth API"
+  version: "v1"
+  base_url: "https://tvlphasahvaffdzzgugf.supabase.co"
+  description: "Supabase password login — token models for run context and AI summary."
+
+auth:
+  type: bearer
+  in: header
+  secret_arn: "arn:apilabs:secret:dff251e8-2513-42db-89e8-3e48d55bdec0"
+
+models:
+  AuthUser:
+    description: "Authenticated Supabase user from login response."
+    id:
+      type: uuid
+      description: "User UUID."
+    email:
+      type: string
+      description: "User email address."
+
+  AuthToken:
+    description: "Supabase password login token response."
+    access_token:
+      type: string
+      description: "JWT bearer token."
+    token_type:
+      type: string
+      description: "Token type, typically bearer."
+    expires_in:
+      type: integer
+      description: "Token lifetime in seconds."
+    refresh_token:
+      type: string
+      description: "Refresh token when applicable."
+    user:
+      type: object
+      description: "Authenticated user profile."
+
+  LoginBody:
+    description: "Email/password grant payload."
+    email:
+      type: string
+      description: "User email address."
+    password:
+      type: string
+      description: "User password."
+
+routes:
+  login:
+    description: "Sign in with email and password."
+    method: POST
+    path: /auth/v1/token
+    headers:
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2bHBoYXNhaHZhZmZkenpndWdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExNTY3MDQsImV4cCI6MjA5NjczMjcwNH0.wlfUUWDfRq5VAkOlirihBv9CHvXcN0PU1GtrCZhAP60"
+      Content-Type: "application/json"
+    params:
+      grant_type:
+        type: string
+        in: query
+        required: true
+    request:
+      body: LoginBody
+    response:
+      200: AuthToken
+
+flows:
+  auth_login:
+    description: "Password grant login."
+    steps:
+      - step: login
+        action: login
+        inputs:
+          grant_type: password
+          body:
+            email: "test@example.com"
+            password: "Test123@"
+
+tests:
+  auth_login:
+    description: "Validates Supabase login returns bearer token and user email."
+    execute: auth_login
+    expect:
+      login: 200
+    verify:
+      - "login.response.body.access_token != null"
+      - "login.response.body.token_type == 'bearer'"
+      - "login.response.body.user.email == 'test@example.com'"
