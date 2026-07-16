@@ -1,0 +1,29 @@
+{
+  "run_id": "tr_qoqp8960",
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "login status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "v2",
+      "label": "login verify",
+      "expression": "login.response.body.access_token != null",
+      "passed": true
+    },
+    {
+      "id": "v3",
+      "label": "login verify",
+      "expression": "login.response.body.token_type == 'bearer'",
+      "passed": true
+    },
+    {
+      "id": "v4",
+      "label": "login verify",
+      "expression": "login.response.body.user.email == 'test@example.com'",
+      "passed": true
+    }
+  ]
+}
