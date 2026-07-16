@@ -1,0 +1,580 @@
+{
+  "success": true,
+  "message": "OK — create: 1 created, 1 skipped, 0 failed (of 2)",
+  "test_name": "jotform_to_zoho_leads",
+  "run_id": "tr_vqlo3992",
+  "run": {
+    "run_id": "tr_vqlo3992",
+    "test_name": "jotform_to_zoho_leads",
+    "flow_name": "forms_to_crm",
+    "generated_at": "2026-06-26T10:35:40Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "",
+      "base_url": "",
+      "version": ""
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "get_form status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "fetch status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s1",
+      "label": "create#1 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "v4",
+      "label": "fetch verify",
+      "expression": "fetch.response.body.content.0.id != null",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {},
+    "created_ids": [],
+    "last_step": "create"
+  },
+  "steps": [
+    {
+      "step": "get_form",
+      "action": "get_form",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 119,
+      "response_size_bytes": 440,
+      "request_url": "https://api.jotform.com/form/261723020835046",
+      "response_body": {
+        "content": {
+          "archived": "0",
+          "count": "2",
+          "created_at": "2026-06-22 07:57:31",
+          "favorite": "0",
+          "height": "539",
+          "id": "261723020835046",
+          "last_submission": "2026-06-24 03:24:01",
+          "new": "2",
+          "status": "ENABLED",
+          "title": "jotform_lead_zoho",
+          "type": "LEGACY",
+          "updated_at": "2026-06-22 08:00:30",
+          "url": "https://form.jotform.com/261723020835046",
+          "username": "hirenfl98"
+        },
+        "duration": "47.09ms",
+        "info": null,
+        "limit-left": 985,
+        "message": "success",
+        "responseCode": 200
+      },
+      "response_model": "Jotform",
+      "response_headers": {
+        "Access-Control-Allow-Methods": "PUT, POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=2592000",
+        "Cache-Control": "no-cache",
+        "Content-Type": "application/json",
+        "Date": "Fri, 26 Jun 2026 10:35:30 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "Jf-Entrypoint": "1",
+        "Jf-Trace-Id": "6dabac898accc7c2",
+        "Last-Modified": "Fri, 26 Jun 2026 10:35:30 GMT",
+        "P3p": "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\"",
+        "Pragma": "no-cache",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Vary": "Accept-Encoding",
+        "Via": "1.1 google",
+        "X-Httpx-Dc": "ue4",
+        "X-Httpx-Id": "019f037f-b950-7b5e-a8da-b67d9b86ca95",
+        "X-Raw-Uri": "form/:id"
+      }
+    },
+    {
+      "step": "fetch",
+      "action": "fetch_submissions",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 143,
+      "response_size_bytes": 1789,
+      "request_url": "https://api.jotform.com/form/261723020835046/submissions",
+      "response_body": {
+        "content": [
+          {
+            "answers": {
+              "1": {
+                "answer": "Jotform_Contract_Zoho",
+                "name": "companynbsp",
+                "order": "1",
+                "text": "Company  ",
+                "type": "control_textbox"
+              },
+              "2": {
+                "answer": "Test",
+                "name": "firstName",
+                "order": "2",
+                "text": "First Name",
+                "type": "control_textbox"
+              },
+              "3": {
+                "answer": "Jotform",
+                "name": "lastNamenbsp",
+                "order": "3",
+                "text": "Last Name  ",
+                "type": "control_textbox"
+              },
+              "4": {
+                "answer": "test@gmail.com",
+                "name": "emailnbsp",
+                "order": "4",
+                "text": "Email  ",
+                "type": "control_textbox"
+              },
+              "5": {
+                "answer": "7896541230",
+                "name": "phone",
+                "order": "5",
+                "text": "Phone ",
+                "type": "control_textbox"
+              },
+              "6": {
+                "name": "submit",
+                "order": "6",
+                "text": "Submit",
+                "type": "control_button"
+              }
+            },
+            "created_at": "2026-06-24 03:24:01",
+            "flag": "0",
+            "form_id": "261723020835046",
+            "id": "6580950412128342598",
+            "ip": "152.58.36.212",
+            "new": "1",
+            "notes": "",
+            "status": "ACTIVE",
+            "updated_at": null
+          },
+          {
+            "answers": {
+              "1": {
+                "answer": "jotform",
+                "name": "companynbsp",
+                "order": "1",
+                "text": "Company  ",
+                "type": "control_textbox"
+              },
+              "2": {
+                "answer": "Hiren",
+                "name": "firstName",
+                "order": "2",
+                "text": "First Name",
+                "type": "control_textbox"
+              },
+              "3": {
+                "answer": "Jot Test",
+                "name": "lastNamenbsp",
+                "order": "3",
+                "text": "Last Name  ",
+                "type": "control_textbox"
+              },
+              "4": {
+                "answer": "hirenjotform@gmail.com",
+                "name": "emailnbsp",
+                "order": "4",
+                "text": "Email  ",
+                "type": "control_textbox"
+              },
+              "5": {
+                "answer": "7485986532",
+                "name": "phone",
+                "order": "5",
+                "text": "Phone ",
+                "type": "control_textbox"
+              },
+              "6": {
+                "name": "submit",
+                "order": "6",
+                "text": "Submit",
+                "type": "control_button"
+              }
+            },
+            "created_at": "2026-06-22 08:05:40",
+            "flag": "0",
+            "form_id": "261723020835046",
+            "id": "6579391402124107226",
+            "ip": "152.58.36.212",
+            "new": "1",
+            "notes": "",
+            "status": "ACTIVE",
+            "updated_at": null
+          }
+        ],
+        "duration": "100.31ms",
+        "info": null,
+        "limit-left": 984,
+        "message": "success",
+        "responseCode": 200,
+        "resultSet": {
+          "count": 2,
+          "limit": 20,
+          "offset": 0
+        }
+      },
+      "response_model": "JotformSubmissions",
+      "response_headers": {
+        "Access-Control-Allow-Methods": "PUT, POST, GET, OPTIONS, DELETE",
+        "Access-Control-Allow-Origin": "*",
+        "Alt-Svc": "h3=\":443\"; ma=2592000",
+        "Cache-Control": "no-cache",
+        "Content-Type": "application/json",
+        "Date": "Fri, 26 Jun 2026 10:35:30 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+        "Jf-Entrypoint": "1",
+        "Jf-Trace-Id": "e1f7c19cf61ea379",
+        "Last-Modified": "Fri, 26 Jun 2026 10:35:30 GMT",
+        "P3p": "CP=\"NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM\"",
+        "Pragma": "no-cache",
+        "Strict-Transport-Security": "max-age=31536000;",
+        "Vary": "Accept-Encoding",
+        "Via": "1.1 google",
+        "X-Httpx-Dc": "ue4",
+        "X-Httpx-Id": "019f037f-b9b3-7d9c-8d3e-b0472bf4e819",
+        "X-Raw-Uri": "form/:id/submissions"
+      }
+    },
+    {
+      "step": "create#0:search",
+      "action": "search_lead",
+      "method": "GET",
+      "status_code": 200,
+      "passed": true,
+      "duration_ms": 1045,
+      "response_size_bytes": 1987,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads/search?criteria=%28Email%3Aequals%3Atest%40gmail.com%29",
+      "response_body": {
+        "data": [
+          {
+            "$approval": {
+              "approve": false,
+              "delegate": false,
+              "reject": false,
+              "resubmit": false,
+              "takeover": false
+            },
+            "$approval_state": "approved",
+            "$converted": false,
+            "$converted_detail": {},
+            "$currency_symbol": "Rs.",
+            "$editable": true,
+            "$field_states": null,
+            "$in_merge": false,
+            "$layout_id": {
+              "display_label": "Standard",
+              "id": "1261847000000000167",
+              "name": "Standard"
+            },
+            "$locked_for_me": false,
+            "$orchestration": null,
+            "$pathfinder": null,
+            "$process_flow": false,
+            "$review": null,
+            "$review_process": {
+              "approve": false,
+              "reject": false,
+              "resubmit": false
+            },
+            "$sharing_permission": "full_access",
+            "$state": "save",
+            "$zia_owner_assignment": "owner_recommendation_unavailable",
+            "$zia_visions": null,
+            "Address": "",
+            "Annual_Revenue": null,
+            "City": null,
+            "Company": "Jotform_Contract_Zoho",
+            "Converted_Account": null,
+            "Converted_Contact": null,
+            "Converted_Deal": null,
+            "Coordinates": "",
+            "Country": null,
+            "Created_By": {
+              "email": "hirenfl98@gmail.com",
+              "id": "1261847000000452001",
+              "name": "Hiren Patel"
+            },
+            "Created_Time": "2026-06-26T15:18:08+05:30",
+            "Description": null,
+            "Designation": null,
+            "Email": "test@gmail.com",
+            "Email_Opt_Out": false,
+            "Fax": null,
+            "First_Name": "Test",
+            "Flat_House_No_Building_Apartment_Name": null,
+            "Full_Name": "Test Jotform",
+            "Industry": null,
+            "Last_Activity_Time": null,
+            "Last_Name": "Jotform",
+            "Latitude": null,
+            "Lead_Conversion_Time": null,
+            "Lead_Source": null,
+            "Lead_Status": null,
+            "Locked__s": false,
+            "Longitude": null,
+            "Mobile": null,
+            "Modified_By": {
+              "email": "hirenfl98@gmail.com",
+              "id": "1261847000000452001",
+              "name": "Hiren Patel"
+            },
+            "Modified_Time": "2026-06-26T15:18:08+05:30",
+            "No_of_Employees": null,
+            "Owner": {
+              "email": "hirenfl98@gmail.com",
+              "id": "1261847000000452001",
+              "name": "Hiren Patel"
+            },
+            "Phone": "7896541230",
+            "Rating": null,
+            "Record_Image": null,
+            "Salutation": null,
+            "Secondary_Email": null,
+            "Skype_ID": null,
+            "State": null,
+            "Street": null,
+            "Twitter": null,
+            "Unsubscribed_Mode": null,
+            "Unsubscribed_Time": null,
+            "Website": null,
+            "Zip_Code": null,
+            "id": "1261847000000630009",
+            "nearby_distance__s": null
+          }
+        ],
+        "info": {
+          "count": 1,
+          "more_records": false,
+          "page": 1,
+          "per_page": 200,
+          "sort_by": "id",
+          "sort_order": "desc"
+        }
+      },
+      "response_model": "ZohoLeadResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 10:35:32 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=161, totalTime;desc=\"Total Execution Time\";dur=318,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=0e887ba4-ae1b-4801-a403-71ab04b677a1;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "Vary": "accept-encoding",
+        "X-Accesstoken-Reset": "2026-06-26T17:05:31+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#0",
+      "action": "create_lead",
+      "method": "SKIP",
+      "status_code": 0,
+      "passed": true,
+      "duration_ms": 0,
+      "error_message": "skipped: crm record exists (external_id=6580950412128342598, crm_record_id=1261847000000630009)",
+      "request_url": "",
+      "response_body": null
+    },
+    {
+      "step": "create#1:search",
+      "action": "search_lead",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 501,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads/search?criteria=%28Email%3Aequals%3Ahirenjotform%40gmail.com%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Date": "Fri, 26 Jun 2026 10:35:33 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=101, totalTime;desc=\"Total Execution Time\";dur=207,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=2c7a5279-300a-4abe-82e9-06503c5e6d73;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T17:05:32+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#1",
+      "action": "create_lead",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 595,
+      "request_size_bytes": 130,
+      "response_size_bytes": 326,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads",
+      "request_body": {
+        "data": [
+          {
+            "Company": "jotform",
+            "Email": "hirenjotform@gmail.com",
+            "First_Name": "Hiren",
+            "Last_Name": "Jot Test",
+            "Phone": "7485986532"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-26T16:05:35+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-26T16:05:35+05:30",
+              "id": "1261847000000620002"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "ZohoLeadCreate",
+      "response_model": "ZohoLeadResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "326",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 10:35:35 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=131, totalTime;desc=\"Total Execution Time\";dur=305,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=1978577d-79a2-44e2-ac74-fddbb7ef2725;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T17:05:35+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 6,
+    "passed_steps": 6,
+    "failed_steps": 0,
+    "total_assertions": 4,
+    "passed_assertions": 4,
+    "failed_assertions": 0,
+    "total_duration_ms": 2403,
+    "slowest_step": "create#0:search",
+    "p50_ms": 501,
+    "p95_ms": 1045,
+    "success": true
+  },
+  "events": [
+    {
+      "type": "upsert_skip",
+      "timestamp": "2026-06-26T10:35:32Z",
+      "step_ref": "create#0",
+      "detail": "crm search found existing record for external_id 6580950412128342598"
+    }
+  ],
+  "models": {
+    "Jotform": {
+      "description": "Jotform form definition",
+      "id": "string",
+      "questions": "object",
+      "title": "string"
+    },
+    "JotformSubmissions": {
+      "content": "array",
+      "description": "List of form submissions"
+    },
+    "ZohoLeadCreate": {
+      "data": "array",
+      "description": "Zoho CRM lead create payload"
+    },
+    "ZohoLeadResponse": {
+      "data": "array",
+      "description": "Zoho CRM lead response"
+    },
+    "ZohoLeadSearch": {
+      "criteria": "string",
+      "description": "Zoho CRM lead search"
+    }
+  },
+  "route_schemas": {
+    "create_lead": {
+      "request_body": "ZohoLeadCreate",
+      "responses": {
+        "201": "ZohoLeadResponse"
+      }
+    },
+    "fetch_submissions": {
+      "responses": {
+        "200": "JotformSubmissions"
+      }
+    },
+    "get_form": {
+      "responses": {
+        "200": "Jotform"
+      }
+    },
+    "search_lead": {
+      "responses": {
+        "200": "ZohoLeadResponse"
+      }
+    }
+  }
+}
