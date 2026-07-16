@@ -1,0 +1,108 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "jotform_bigin_products",
+  "run_id": "tr_hnwf5082",
+  "duration_ms": 0,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "validate",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "crm_field_count": 12,
+        "form_field_count": 6,
+        "resolved_mappings": [
+          {
+            "destFieldApiName": "Product_Name",
+            "destFieldLabel": "Product Name",
+            "required": false,
+            "sourceFieldId": "3",
+            "sourceLabel": "Product Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Product_Code",
+            "destFieldLabel": "Product Code",
+            "required": false,
+            "sourceFieldId": "4",
+            "sourceLabel": "Product Code",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Product_Category",
+            "destFieldLabel": "Product Category",
+            "required": false,
+            "sourceFieldId": "5",
+            "sourceLabel": "Product Category",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Unit_Price",
+            "destFieldLabel": "Unit Price",
+            "required": false,
+            "sourceFieldId": "6",
+            "sourceLabel": "Unit Price",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Description",
+            "destFieldLabel": "Description",
+            "required": false,
+            "sourceFieldId": "7",
+            "sourceLabel": "Description",
+            "transform": ""
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "step": "create_config",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "484d9037-0536-4a59-b05b-8d992c4d72d1",
+        "name": "jotform_bigin_products_contract",
+        "success": true
+      }
+    },
+    {
+      "step": "test_sync",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "484d9037-0536-4a59-b05b-8d992c4d72d1",
+        "message": "Sync complete: 2 created, 0 skipped, 0 failed (of 2).",
+        "results": [
+          {
+            "draft_created": false,
+            "message_id": "6580956722126513996",
+            "subject": "product_collection → Products 1297440000000491012",
+            "thread_id": ""
+          },
+          {
+            "draft_created": false,
+            "message_id": "6579415042126485148",
+            "subject": "product_collection → Products 1297440000000490010",
+            "thread_id": ""
+          }
+        ],
+        "success": true,
+        "threads_total": 2
+      }
+    }
+  ]
+}
