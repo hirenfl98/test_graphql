@@ -1,0 +1,801 @@
+{
+  "success": true,
+  "message": "OK — create: 2 created, 0 skipped, 0 failed (of 2)",
+  "test_name": "gravity_forms_to_zoho_campaigns",
+  "run_id": "tr_mafs4909",
+  "run": {
+    "run_id": "tr_mafs4909",
+    "test_name": "gravity_forms_to_zoho_campaigns",
+    "flow_name": "forms_to_crm",
+    "generated_at": "2026-06-26T12:42:58Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "",
+      "base_url": "",
+      "version": ""
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "get_form status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "fetch status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s1",
+      "label": "create#0 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "create#1 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "v5",
+      "label": "fetch verify",
+      "expression": "fetch.response.body.entries.0.id != null",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {
+      "get_form.response.body.id": "29",
+      "get_form_id": "29"
+    },
+    "created_ids": [],
+    "last_step": "create"
+  },
+  "steps": [
+    {
+      "step": "get_form",
+      "action": "get_form",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 586,
+      "response_size_bytes": 6444,
+      "request_url": "https://proactive-cod-76633b.gravitydemo.com/wp-json/gf/v2/forms/29",
+      "response_body": {
+        "button": {
+          "imageUrl": "",
+          "layoutGridColumnSpan": 12,
+          "location": "bottom",
+          "text": "",
+          "type": "text",
+          "width": "auto"
+        },
+        "confirmations": {
+          "6a3e6a28576b6": {
+            "id": "6a3e6a28576b6",
+            "isDefault": true,
+            "message": "Thanks for contacting us! We will get in touch with you shortly.",
+            "name": "Default Confirmation",
+            "pageId": "",
+            "queryString": "",
+            "type": "message",
+            "url": ""
+          }
+        },
+        "date_created": "2026-06-26 12:01:44",
+        "description": "",
+        "fields": [
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 29,
+            "id": 1,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Campaign Name",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "c2f1e85e",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": [
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Planning",
+                "value": "Planning"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Active",
+                "value": "Active"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Inactive",
+                "value": "Inactive"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Complete",
+                "value": "Complete"
+              }
+            ],
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": false,
+            "enablePrice": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 29,
+            "id": 3,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "select",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Status",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "5e476f3b",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "select",
+            "useRichTextEditor": false,
+            "validateState": true,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": [
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Conference",
+                "value": "Conference"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Webinar",
+                "value": "Webinar"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Trade Show",
+                "value": "Trade Show"
+              },
+              {
+                "isSelected": false,
+                "price": "",
+                "text": "Public Relations",
+                "value": "Public Relations"
+              }
+            ],
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": false,
+            "enablePrice": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 29,
+            "id": 4,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "select",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Type",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "a8d77d29",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "select",
+            "useRichTextEditor": false,
+            "validateState": true,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "calendarIconType": "none",
+            "calendarIconUrl": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "dateFormat": "dmy",
+            "dateFormatPlacement": "below",
+            "dateType": "datepicker",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 29,
+            "id": 5,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "date",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Start Date",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "241b51ad",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "date",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "calendarIconType": "none",
+            "calendarIconUrl": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "dateFormat": "dmy",
+            "dateFormatPlacement": "below",
+            "dateType": "datepicker",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 29,
+            "id": 6,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "date",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "End Date",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "f449d2ed",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "date",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          }
+        ],
+        "firstPageCssClass": null,
+        "id": 29,
+        "is_active": "1",
+        "is_trash": "0",
+        "lastPageButton": null,
+        "markupVersion": 2,
+        "nextFieldId": 7,
+        "notifications": {
+          "6a3e6a28567ba": {
+            "event": "form_submission",
+            "id": "6a3e6a28567ba",
+            "isActive": true,
+            "message": "{all_fields}",
+            "name": "Admin Notification",
+            "subject": "New submission from {form_title}",
+            "to": "{admin_email}",
+            "toType": "email"
+          }
+        },
+        "pagination": null,
+        "postContentTemplate": "",
+        "postContentTemplateEnabled": false,
+        "postTitleTemplate": "",
+        "postTitleTemplateEnabled": false,
+        "title": "Campaigns_Gravity",
+        "useCurrentUserAsAuthor": true,
+        "version": "2.10.4"
+      },
+      "response_model": "GravityForm",
+      "response_headers": {
+        "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+        "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+        "Allow": "GET, PUT, DELETE",
+        "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:42:48 GMT",
+        "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+        "Link": "<https://proactive-cod-76633b.gravitydemo.com/wp-json/>; rel=\"https://api.w.org/\"",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Microcache-Status": "MISS",
+        "X-Robots-Tag": "noindex",
+        "X-Served-By": "apache"
+      }
+    },
+    {
+      "step": "fetch",
+      "action": "fetch_entries",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 269,
+      "response_size_bytes": 1573,
+      "request_url": "https://proactive-cod-76633b.gravitydemo.com/wp-json/gf/v2/forms/29/entries",
+      "response_body": {
+        "entries": [
+          {
+            "1": "AI Innovation Summit 2026",
+            "3": "Planning",
+            "4": "Trade Show",
+            "5": "2026-06-30",
+            "6": "2026-07-02",
+            "created_by": null,
+            "currency": "USD",
+            "date_created": "2026-06-26 12:08:19",
+            "date_updated": "2026-06-26 12:08:39",
+            "form_id": "29",
+            "helpscout_conversation_id": false,
+            "id": "3",
+            "ip": "152.58.36.212",
+            "is_fulfilled": null,
+            "is_read": "1",
+            "is_starred": "0",
+            "payment_amount": null,
+            "payment_date": null,
+            "payment_method": null,
+            "payment_status": null,
+            "post_id": null,
+            "source_id": "1187",
+            "source_url": "https://proactive-cod-76633b.gravitydemo.com/campaigns_gravity/",
+            "status": "active",
+            "submission_speeds": "{\"1\":[49632]}",
+            "transaction_id": null,
+            "transaction_type": null,
+            "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+          },
+          {
+            "1": "ApiLabs Test",
+            "3": "Active",
+            "4": "Webinar",
+            "5": "2026-06-27",
+            "6": "2026-06-30",
+            "created_by": null,
+            "currency": "USD",
+            "date_created": "2026-06-26 12:06:45",
+            "date_updated": "2026-06-26 12:06:45",
+            "form_id": "29",
+            "helpscout_conversation_id": false,
+            "id": "2",
+            "ip": "152.58.36.212",
+            "is_fulfilled": null,
+            "is_read": "0",
+            "is_starred": "0",
+            "payment_amount": null,
+            "payment_date": null,
+            "payment_method": null,
+            "payment_status": null,
+            "post_id": null,
+            "source_id": "1187",
+            "source_url": "https://proactive-cod-76633b.gravitydemo.com/campaigns_gravity/",
+            "status": "active",
+            "submission_speeds": "{\"1\":[42935]}",
+            "transaction_id": null,
+            "transaction_type": null,
+            "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+          }
+        ],
+        "total_count": 2
+      },
+      "response_model": "GravityEntries",
+      "response_headers": {
+        "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+        "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+        "Allow": "GET, POST",
+        "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:42:48 GMT",
+        "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+        "Link": "<https://proactive-cod-76633b.gravitydemo.com/wp-json/>; rel=\"https://api.w.org/\"",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Microcache-Status": "EXPIRED",
+        "X-Robots-Tag": "noindex",
+        "X-Served-By": "apache"
+      }
+    },
+    {
+      "step": "create#0:search",
+      "action": "search_campaign",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 991,
+      "request_url": "https://www.zohoapis.in/crm/v3/Campaigns/search?criteria=%28Campaign_Name%3Aequals%3AAI+Innovation+Summit+2026%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Date": "Fri, 26 Jun 2026 12:42:50 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=76, totalTime;desc=\"Total Execution Time\";dur=251,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=3cfcbba1-7b92-48c7-80aa-46e996d77816;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T19:12:49+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#0",
+      "action": "create_campaign",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 557,
+      "request_size_bytes": 146,
+      "response_size_bytes": 355,
+      "request_url": "https://www.zohoapis.in/crm/v3/Campaigns",
+      "request_body": {
+        "data": [
+          {
+            "Campaign_Name": "AI Innovation Summit 2026",
+            "End_Date": "2026-07-02",
+            "Start_Date": "2026-06-30",
+            "Status": "Planning",
+            "Type": "Trade Show"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "$approval_state": "approved",
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-26T18:12:51+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-26T18:12:51+05:30",
+              "id": "1261847000000630012"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "ZohoCampaignCreate",
+      "response_model": "ZohoCampaignResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "355",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:42:51 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=99, totalTime;desc=\"Total Execution Time\";dur=255,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=87939572-7d9f-4d2f-8c66-8c7ab8ea3072;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T19:12:51+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#1:search",
+      "action": "search_campaign",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 444,
+      "request_url": "https://www.zohoapis.in/crm/v3/Campaigns/search?criteria=%28Campaign_Name%3Aequals%3AApiLabs+Test%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Date": "Fri, 26 Jun 2026 12:42:52 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=54, totalTime;desc=\"Total Execution Time\";dur=142,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=7d083a0f-ccf1-4ec7-863a-19df1fff58cd;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T19:12:52+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#1",
+      "action": "create_campaign",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 536,
+      "request_size_bytes": 128,
+      "response_size_bytes": 355,
+      "request_url": "https://www.zohoapis.in/crm/v3/Campaigns",
+      "request_body": {
+        "data": [
+          {
+            "Campaign_Name": "ApiLabs Test",
+            "End_Date": "2026-06-30",
+            "Start_Date": "2026-06-27",
+            "Status": "Active",
+            "Type": "Webinar"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "$approval_state": "approved",
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-26T18:12:53+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-26T18:12:53+05:30",
+              "id": "1261847000000625003"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "ZohoCampaignCreate",
+      "response_model": "ZohoCampaignResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b13d85a9f005f2b0fa59b4c2ad943909",
+        "Clientversion": "13788373",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "355",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:42:53 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=100, totalTime;desc=\"Total Execution Time\";dur=230,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=ae7548db-7cfb-4126-a2bf-486c55376903;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-06-26T19:12:52+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 6,
+    "passed_steps": 6,
+    "failed_steps": 0,
+    "total_assertions": 5,
+    "passed_assertions": 5,
+    "failed_assertions": 0,
+    "total_duration_ms": 3383,
+    "slowest_step": "create#0:search",
+    "p50_ms": 557,
+    "p95_ms": 991,
+    "success": true
+  },
+  "models": {
+    "GravityEntries": {
+      "description": "List of Gravity Form entries",
+      "entries": "array"
+    },
+    "GravityForm": {
+      "description": "Gravity Form definition",
+      "fields": "array",
+      "id": "string",
+      "title": "string"
+    },
+    "ZohoCampaignCreate": {
+      "data": "array",
+      "description": "Zoho CRM Campaign create payload"
+    },
+    "ZohoCampaignResponse": {
+      "data": "array",
+      "description": "Zoho CRM Campaign response"
+    },
+    "ZohoCampaignSearch": {
+      "criteria": "string",
+      "description": "Zoho CRM Campaign search"
+    }
+  },
+  "route_schemas": {
+    "create_campaign": {
+      "request_body": "ZohoCampaignCreate",
+      "responses": {
+        "201": "ZohoCampaignResponse"
+      }
+    },
+    "fetch_entries": {
+      "responses": {
+        "200": "GravityEntries"
+      }
+    },
+    "get_form": {
+      "responses": {
+        "200": "GravityForm"
+      }
+    },
+    "search_campaign": {
+      "responses": {
+        "200": "ZohoCampaignResponse"
+      }
+    }
+  }
+}
