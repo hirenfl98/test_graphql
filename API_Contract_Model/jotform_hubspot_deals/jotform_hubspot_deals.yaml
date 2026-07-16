@@ -1,0 +1,48 @@
+contract:
+  format: apilabs.ai
+  version: "1.0"
+  type: apptalk-contract
+
+run: jotform_hubspot_deals
+
+apptalk:
+  name: jotform_hubspot_deals_contract
+  form_provider: jotform
+  form_auth_arn: arn:apilabs:secret:de271e3e-9bb6-4506-b554-3f5835643153
+  form_id: "261733149121451"
+  form_name: JotForm_HubSpot_Deals
+
+  crm_provider: hubspot
+  crm_auth_arn: arn:apilabs:secret:263ed614-934e-48b0-a7d9-59ca4438ba60
+  crm_module: Deals
+
+  cleanup: true
+
+  mappings:
+    - sourceLabel: Deal name
+      destFieldApiName: dealname
+
+    - sourceLabel: Pipeline
+      destFieldApiName: pipeline
+
+    - sourceLabel: Deal stage
+      destFieldApiName: dealstage
+
+    - sourceLabel: Amount
+      destFieldApiName: amount
+
+    - sourceLabel: Close date
+      destFieldApiName: closedate
+
+flows:
+  e2e:
+    steps:
+      - step: validate
+      - step: create_config
+      - step: test_sync
+
+tests:
+  jotform_hubspot_deals:
+    execute: e2e
+    verify:
+      - "test_sync.response.body.success == true"
