@@ -1,0 +1,122 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "google_forms_zoho_leads",
+  "run_id": "tr_xhea3276",
+  "duration_ms": 0,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "validate",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "crm_field_count": 46,
+        "form_field_count": 6,
+        "resolved_mappings": [
+          {
+            "destFieldApiName": "First_Name",
+            "destFieldLabel": "First Name",
+            "required": false,
+            "sourceFieldId": "1dd079ac",
+            "sourceLabel": "First Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Last_Name",
+            "destFieldLabel": "Last Name",
+            "required": false,
+            "sourceFieldId": "15931833",
+            "sourceLabel": "Last Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Email",
+            "destFieldLabel": "Email",
+            "required": false,
+            "sourceFieldId": "169291c1",
+            "sourceLabel": "Email",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Phone",
+            "destFieldLabel": "Phone",
+            "required": false,
+            "sourceFieldId": "2a739d0a",
+            "sourceLabel": "Phone",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Company",
+            "destFieldLabel": "Company",
+            "required": false,
+            "sourceFieldId": "48b3a242",
+            "sourceLabel": "Company",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "City",
+            "destFieldLabel": "Address - City",
+            "required": false,
+            "sourceFieldId": "24376c99",
+            "sourceLabel": "City",
+            "transform": ""
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "step": "create_config",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "f823f4b9-8912-43c5-876f-097802fc3ae6",
+        "name": "google_forms_zoho_leads_contract",
+        "success": true
+      }
+    },
+    {
+      "step": "test_sync",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "f823f4b9-8912-43c5-876f-097802fc3ae6",
+        "message": "Sync complete: 3 created, 0 skipped, 0 failed (of 3).",
+        "results": [
+          {
+            "draft_created": false,
+            "message_id": "ACYDBNgN6XqpwM4IItiqEViCNGJdSEyN_wHLZrN6nbZNBMS0h6AtZ79j8Eb9pBtqzVx0Nsw",
+            "subject": "Lead Capture Form → Leads 1261847000000612001",
+            "thread_id": ""
+          },
+          {
+            "draft_created": false,
+            "message_id": "ACYDBNh7v8wA00XJgKj8f86Tr7AelqYegGJwXqsyxYKJsweb-yJO7WhLoCL8uMztdk53hpM",
+            "subject": "Lead Capture Form → Leads 1261847000000613001",
+            "thread_id": ""
+          },
+          {
+            "draft_created": false,
+            "message_id": "ACYDBNhmKBIWgozTgClPKiXgIMakphksWT3IQSK4o4VUvLKxHiFiGsaVazEqH0MS9aL3ehQ",
+            "subject": "Lead Capture Form → Leads 1261847000000606003",
+            "thread_id": ""
+          }
+        ],
+        "success": true,
+        "threads_total": 3
+      }
+    }
+  ]
+}
