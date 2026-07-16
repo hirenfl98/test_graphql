@@ -1,0 +1,108 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "google_forms_hubspot_deals",
+  "run_id": "tr_madn5540",
+  "duration_ms": 0,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "validate",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "crm_field_count": 205,
+        "form_field_count": 5,
+        "resolved_mappings": [
+          {
+            "destFieldApiName": "dealname",
+            "destFieldLabel": "Deal Name",
+            "required": false,
+            "sourceFieldId": "26364c8d",
+            "sourceLabel": "Deal name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "pipeline",
+            "destFieldLabel": "Pipeline",
+            "required": false,
+            "sourceFieldId": "6e818508",
+            "sourceLabel": "Pipeline",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "dealstage",
+            "destFieldLabel": "Deal Stage",
+            "required": false,
+            "sourceFieldId": "35a2a505",
+            "sourceLabel": "Deal stage",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "amount",
+            "destFieldLabel": "Amount",
+            "required": false,
+            "sourceFieldId": "58491774",
+            "sourceLabel": "Amount",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "closedate",
+            "destFieldLabel": "Close Date",
+            "required": false,
+            "sourceFieldId": "03b4cd1e",
+            "sourceLabel": "Close date",
+            "transform": ""
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "step": "create_config",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "85073783-2821-4c20-8eed-11cfbaa7ca87",
+        "name": "google_forms_hubspot_deals_contract",
+        "success": true
+      }
+    },
+    {
+      "step": "test_sync",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "85073783-2821-4c20-8eed-11cfbaa7ca87",
+        "message": "Sync complete: 2 created, 0 skipped, 0 failed (of 2).",
+        "results": [
+          {
+            "draft_created": false,
+            "message_id": "ACYDBNgNg7DfVqLQVGrdN-MSSEO-xXBqdaQnwlaNV3JMUybAlzywkvr3PaECSP43cuB2eYY",
+            "subject": "Sales Pipeline Deals → Deals 332407569095",
+            "thread_id": ""
+          },
+          {
+            "draft_created": false,
+            "message_id": "ACYDBNjO5spzVEpI9lJSuEXLNlSgPcMR17oURq3xbD67w8kF9R0ioO8avzsn1uoGkCF5ENk",
+            "subject": "Sales Pipeline Deals → Deals 332338412220",
+            "thread_id": ""
+          }
+        ],
+        "success": true,
+        "threads_total": 2
+      }
+    }
+  ]
+}
