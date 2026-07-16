@@ -1,0 +1,117 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "todos_crud",
+  "run_id": "tr_zjaq0771",
+  "duration_ms": 2946,
+  "steps": 5,
+  "passed": 5,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "create",
+      "method": "POST",
+      "url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos",
+      "status": 201,
+      "passed": true,
+      "duration_ms": 1375,
+      "expected_status": 201,
+      "request": {
+        "description": "Created from contract E2E flow",
+        "title": "E2E Todo",
+        "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+      },
+      "response": [
+        {
+          "created_at": "2026-06-19T11:00:08.58986+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ]
+    },
+    {
+      "step": "list",
+      "method": "GET",
+      "url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?select=%2A",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 781,
+      "expected_status": 200,
+      "response": [
+        {
+          "created_at": "2026-06-17T09:14:13.097138+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "74846e24-7d15-4a99-91f0-eb1df4b9da3d",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        },
+        {
+          "created_at": "2026-06-18T05:03:36.725484+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "1ab6cc69-ed5d-4a06-bd73-4be7a266859a",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        },
+        {
+          "created_at": "2026-06-19T11:00:08.58986+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ]
+    },
+    {
+      "step": "get",
+      "method": "GET",
+      "url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.4cdaa031-50f8-4a9e-a51b-63801a0d3466&select=%2A",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 262,
+      "expected_status": 200,
+      "response": [
+        {
+          "created_at": "2026-06-19T11:00:08.58986+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ]
+    },
+    {
+      "step": "update",
+      "method": "PATCH",
+      "url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 269,
+      "expected_status": 200,
+      "request": {
+        "description": "Updated from contract E2E flow",
+        "title": "Updated E2E"
+      },
+      "response": [
+        {
+          "created_at": "2026-06-19T11:00:08.58986+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ]
+    },
+    {
+      "step": "delete",
+      "method": "DELETE",
+      "url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.4cdaa031-50f8-4a9e-a51b-63801a0d3466",
+      "status": 204,
+      "passed": true,
+      "duration_ms": 259,
+      "expected_status": 204,
+      "response": null
+    }
+  ]
+}
