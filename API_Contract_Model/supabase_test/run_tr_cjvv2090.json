@@ -1,0 +1,381 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "todos_crud",
+  "run_id": "tr_cjvv2090",
+  "run": {
+    "run_id": "tr_cjvv2090",
+    "test_name": "todos_crud",
+    "flow_name": "todos_crud",
+    "generated_at": "2026-06-18T09:44:28Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "Supabase Todos API",
+      "base_url": "https://tvlphasahvaffdzzgugf.supabase.co",
+      "version": "v1",
+      "auth_scheme": "bearer"
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "create status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "list status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s3",
+      "label": "get status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s4",
+      "label": "update status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s5",
+      "label": "delete status",
+      "expression": "= 204",
+      "passed": true
+    },
+    {
+      "id": "v6",
+      "label": "create verify",
+      "expression": "create.response.body.0.id != null",
+      "passed": true
+    },
+    {
+      "id": "v7",
+      "label": "create verify",
+      "expression": "create.response.body.0.user_id == '5cb5b240-8bd4-4172-a219-e7561214697a'",
+      "passed": true
+    },
+    {
+      "id": "v8",
+      "label": "update verify",
+      "expression": "update.response.body.0.title == 'Updated E2E'",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {
+      "create.response.body.0.id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "create_id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "get.response.body.0.id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "get_id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "list.response.body.0.id": "74846e24-7d15-4a99-91f0-eb1df4b9da3d",
+      "list_id": "74846e24-7d15-4a99-91f0-eb1df4b9da3d",
+      "update.response.body.0.id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "update_id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e"
+    },
+    "created_ids": [
+      "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e"
+    ],
+    "last_step": "delete"
+  },
+  "steps": [
+    {
+      "step": "create",
+      "action": "create_todo",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 748,
+      "request_size_bytes": 116,
+      "response_size_bytes": 209,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos",
+      "request_body": {
+        "description": "Created from contract E2E flow",
+        "title": "E2E Todo",
+        "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+      },
+      "response_body": [
+        {
+          "created_at": "2026-06-18T09:44:27.23388+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ],
+      "request_model": "TodoCreate",
+      "response_model": "TodoList",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a0d95aff286d3928-IAD",
+        "Content-Profile": "public",
+        "Content-Range": "*/*",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 18 Jun 2026 09:44:27 GMT",
+        "Preference-Applied": "return=representation",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eda1e-1b7a-74ec-8a5f-204db8045b79",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=hyPu._uWrlkL4CsymWTbNhbaDOVH9LAHtvsvQGCRUzw-1781775866.7414184-1.0.1.1-q_fU6dlh6g75DmG46CFg_KMkSdPVFXw4n.vXCmilKa0giblGxMFu7wTNaaAcMU2b5uCYrZF_DmarHb9O7Z03GpWWdu0L_Tgap4kM7PWMiiLiwmE_GvUOuakMRIq4F0.W; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 18 Jun 2026 10:14:27 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "308"
+      }
+    },
+    {
+      "step": "list",
+      "action": "list_todos",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 263,
+      "response_size_bytes": 639,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?select=%2A",
+      "response_body": [
+        {
+          "created_at": "2026-06-17T09:14:13.097138+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "74846e24-7d15-4a99-91f0-eb1df4b9da3d",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        },
+        {
+          "created_at": "2026-06-18T05:03:36.725484+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "1ab6cc69-ed5d-4a06-bd73-4be7a266859a",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        },
+        {
+          "created_at": "2026-06-18T09:44:27.23388+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ],
+      "response_model": "TodoList",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a0d95b035ab93928-IAD",
+        "Content-Location": "/todos?select=%2A",
+        "Content-Profile": "public",
+        "Content-Range": "0-2/*",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 18 Jun 2026 09:44:27 GMT",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eda1e-1e1f-7278-850b-0e8afb49cf7b",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=ufUuHJ5XyECbpG95CDhEiGxLvFbdj5zhIjrOiZcNESs-1781775867.417403-1.0.1.1-_JiEpCE_3ali8TIS8d33lBVKT.nMWdD.q7tJ9XVHnD7kkONBCkaiSODY5V7X9ZKnXg60rbLO322abfd_DBNgKLBMHrIYUtqWh_ZMOOaCok8KPVLaVmWqub6l_DQdtL5c; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 18 Jun 2026 10:14:27 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "9"
+      }
+    },
+    {
+      "step": "get",
+      "action": "get_todo",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 260,
+      "response_size_bytes": 209,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e&select=%2A",
+      "response_body": [
+        {
+          "created_at": "2026-06-18T09:44:27.23388+00:00",
+          "description": "Created from contract E2E flow",
+          "id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+          "title": "E2E Todo",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ],
+      "response_model": "TodoList",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a0d95b050bc33928-IAD",
+        "Content-Location": "/todos?id=eq.e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e&select=%2A",
+        "Content-Profile": "public",
+        "Content-Range": "0-0/*",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 18 Jun 2026 09:44:27 GMT",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eda1e-1f2b-7cc9-90a3-9b610f404977",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=Ayth16hSYXto3PuuRjOfyrj_Wy3uZoCp0.HTgsLiONE-1781775867.6861186-1.0.1.1-GXHpTxWniYSjPBPyycB_vZ3NZRdGtvIbPIQEagJez2WAcDWKaxxtVAd_giHhaSLnqoPODr8o9F1zdZpW5K6mfJoNJIgBVQfyJ14_ZYGuye3sjmJfliniHs9L4oSzM67p; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 18 Jun 2026 10:14:27 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "3"
+      }
+    },
+    {
+      "step": "update",
+      "action": "update_todo",
+      "method": "PATCH",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 269,
+      "request_size_bytes": 70,
+      "response_size_bytes": 212,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "request_body": {
+        "description": "Updated from contract E2E flow",
+        "title": "Updated E2E"
+      },
+      "response_body": [
+        {
+          "created_at": "2026-06-18T09:44:27.23388+00:00",
+          "description": "Updated from contract E2E flow",
+          "id": "e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+          "title": "Updated E2E",
+          "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+        }
+      ],
+      "request_model": "TodoUpdate",
+      "response_model": "TodoList",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a0d95b06acc83928-IAD",
+        "Content-Profile": "public",
+        "Content-Range": "0-0/*",
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 18 Jun 2026 09:44:28 GMT",
+        "Preference-Applied": "return=representation",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eda1e-203b-7cfa-847f-7d3398957738",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=I9V8sgDJIGBrgTiYAajV0jOiq0u0v2z7CfvFpzZ6v4Y-1781775867.9513745-1.0.1.1-MSx5FlH8wrVe8KnDf4Qo.Nrkl6lw9Spful5XTuqSEgpkV0lTfeFrDB1iPFUHGkwF5GQiYYJAIZtCCmiWOJVd5OTV2wZ6rzZT2Dx6aWjubLn8zl_4Pm8wyC35U9SF9cyA; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 18 Jun 2026 10:14:28 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "8"
+      }
+    },
+    {
+      "step": "delete",
+      "action": "delete_todo",
+      "method": "DELETE",
+      "status_code": 204,
+      "expected_status": 204,
+      "passed": true,
+      "duration_ms": 256,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/rest/v1/todos?id=eq.e38ce9af-59b7-4a70-97dc-3c3c8b3ac99e",
+      "response_body": null,
+      "response_model": "Empty",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a0d95b086ddf3928-IAD",
+        "Content-Range": "*/*",
+        "Date": "Thu, 18 Jun 2026 09:44:28 GMT",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eda1e-2148-7ad8-9725-111dff43d770",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=rWsKUPLhzLmE_OpPtW1QQOVQEu2mUyVUJC8ytx.3.t4-1781775868.2260695-1.0.1.1-lb7ujXa9RMC_cMy9ROwZ.BximSrSjn4qGMwYHzZxA5m9T4mYPwJBAuEJbYFgVQg6Vj4m7wpt4uQ6RoVMkg_T.9Lc96IvpXOnnfTmJ.B.xLgNKFGUbm4TqK_SzDBAumI9; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 18 Jun 2026 10:14:28 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "4"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 5,
+    "passed_steps": 5,
+    "failed_steps": 0,
+    "total_assertions": 8,
+    "passed_assertions": 8,
+    "failed_assertions": 0,
+    "total_duration_ms": 1796,
+    "slowest_step": "create",
+    "p50_ms": 263,
+    "p95_ms": 748,
+    "success": true
+  },
+  "models": {
+    "Empty": {
+      "description": "No response body (204 delete)."
+    },
+    "Todo": {
+      "created_at": "datetime",
+      "description": "Single todo row.",
+      "id": "uuid",
+      "title": "string",
+      "user_id": "uuid"
+    },
+    "TodoCreate": {
+      "description": "Payload for creating a todo.",
+      "required": [
+        "title",
+        "user_id"
+      ],
+      "title": "string",
+      "user_id": "uuid"
+    },
+    "TodoList": {
+      "description": "Array of todos returned by PostgREST.",
+      "items": "Todo",
+      "type": "array"
+    },
+    "TodoUpdate": {
+      "description": "Payload for updating a todo.",
+      "title": "string"
+    }
+  },
+  "route_schemas": {
+    "create_todo": {
+      "request_body": "TodoCreate",
+      "responses": {
+        "201": "TodoList"
+      }
+    },
+    "delete_todo": {
+      "responses": {
+        "204": "Empty"
+      }
+    },
+    "get_todo": {
+      "responses": {
+        "200": "TodoList"
+      }
+    },
+    "list_todos": {
+      "responses": {
+        "200": "TodoList"
+      }
+    },
+    "update_todo": {
+      "request_body": "TodoUpdate",
+      "responses": {
+        "200": "TodoList"
+      }
+    }
+  }
+}
