@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "gravity_forms_bigin_contacts",
+  "run_id": "tr_huql9496",
+  "duration_ms": 0,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "validate",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "crm_field_count": 26,
+        "form_field_count": 5,
+        "resolved_mappings": [
+          {
+            "destFieldApiName": "First_Name",
+            "destFieldLabel": "First Name",
+            "required": false,
+            "sourceFieldId": "1",
+            "sourceLabel": "First Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Last_Name",
+            "destFieldLabel": "Last Name",
+            "required": false,
+            "sourceFieldId": "3",
+            "sourceLabel": "Last Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Email",
+            "destFieldLabel": "Email",
+            "required": false,
+            "sourceFieldId": "4",
+            "sourceLabel": "Email",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Mobile",
+            "destFieldLabel": "Mobile",
+            "required": false,
+            "sourceFieldId": "5",
+            "sourceLabel": "Mobile",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Account_Name",
+            "destFieldLabel": "Company Name",
+            "required": false,
+            "sourceFieldId": "6",
+            "sourceLabel": "Company Name",
+            "transform": ""
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "step": "create_config",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "5906a59b-4926-4892-9c20-8d51b2723d25",
+        "name": "gravity_forms_bigin_contacts_contract",
+        "success": true
+      }
+    },
+    {
+      "step": "test_sync",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "5906a59b-4926-4892-9c20-8d51b2723d25",
+        "message": "Sync complete: 1 created, 0 skipped, 0 failed (of 1).",
+        "results": [
+          {
+            "draft_created": false,
+            "message_id": "3",
+            "subject": "gravity_forms_bigin_contacts → Contacts 1297440000000490015",
+            "thread_id": ""
+          }
+        ],
+        "success": true,
+        "threads_total": 1
+      }
+    }
+  ]
+}
