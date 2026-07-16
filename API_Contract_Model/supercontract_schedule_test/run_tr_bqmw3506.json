@@ -1,0 +1,571 @@
+{
+  "success": true,
+  "message": "OK — create: 2 created, 0 skipped, 0 failed (of 2)",
+  "test_name": "google_forms_to_zoho_leads",
+  "run_id": "tr_bqmw3506",
+  "run": {
+    "run_id": "tr_bqmw3506",
+    "test_name": "google_forms_to_zoho_leads",
+    "flow_name": "forms_to_crm",
+    "generated_at": "2026-07-15T10:55:51Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "",
+      "base_url": "",
+      "version": ""
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "get_form status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "fetch status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s1",
+      "label": "create#0 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "create#1 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "v5",
+      "label": "fetch verify",
+      "expression": "fetch.response.body.responses.0.responseId != null",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {},
+    "created_ids": [],
+    "last_step": "create"
+  },
+  "steps": [
+    {
+      "step": "get_form",
+      "action": "get_form",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 435,
+      "response_size_bytes": 1678,
+      "request_url": "https://forms.googleapis.com/v1/forms/1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so",
+      "response_body": {
+        "formId": "1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so",
+        "info": {
+          "documentTitle": "Lead Capture Form",
+          "title": "Lead Capture Form"
+        },
+        "items": [
+          {
+            "itemId": "17017697",
+            "questionItem": {
+              "question": {
+                "questionId": "1dd079ac",
+                "textQuestion": {}
+              }
+            },
+            "title": "First Name"
+          },
+          {
+            "itemId": "573f814d",
+            "questionItem": {
+              "question": {
+                "questionId": "15931833",
+                "textQuestion": {}
+              }
+            },
+            "title": "Last Name"
+          },
+          {
+            "itemId": "2561f015",
+            "questionItem": {
+              "question": {
+                "questionId": "169291c1",
+                "textQuestion": {}
+              }
+            },
+            "title": "Email"
+          },
+          {
+            "itemId": "452b9516",
+            "questionItem": {
+              "question": {
+                "questionId": "2a739d0a",
+                "textQuestion": {}
+              }
+            },
+            "title": "Phone"
+          },
+          {
+            "itemId": "53aa5524",
+            "questionItem": {
+              "question": {
+                "questionId": "48b3a242",
+                "textQuestion": {}
+              }
+            },
+            "title": "Company"
+          },
+          {
+            "itemId": "351cca40",
+            "questionItem": {
+              "question": {
+                "questionId": "24376c99",
+                "textQuestion": {}
+              }
+            },
+            "title": "City"
+          }
+        ],
+        "publishSettings": {
+          "publishState": {
+            "isAcceptingResponses": true,
+            "isPublished": true
+          }
+        },
+        "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSeOm1f_b1TeB4BjMhtCmzE_XTNi2H_2YVYMkVUXOFvof9_BLg/viewform",
+        "revisionId": "0000001f",
+        "settings": {
+          "emailCollectionType": "DO_NOT_COLLECT"
+        }
+      },
+      "response_model": "GoogleForm",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Wed, 15 Jul 2026 10:55:43 GMT",
+        "Server": "ESF",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0"
+      }
+    },
+    {
+      "step": "fetch",
+      "action": "fetch_form_responses",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 130,
+      "response_size_bytes": 3093,
+      "request_url": "https://forms.googleapis.com/v1/forms/1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so/responses",
+      "response_body": {
+        "responses": [
+          {
+            "answers": {
+              "15931833": {
+                "questionId": "15931833",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "bulk"
+                    }
+                  ]
+                }
+              },
+              "169291c1": {
+                "questionId": "169291c1",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "testbulk@gmail.com"
+                    }
+                  ]
+                }
+              },
+              "1dd079ac": {
+                "questionId": "1dd079ac",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "test"
+                    }
+                  ]
+                }
+              },
+              "24376c99": {
+                "questionId": "24376c99",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "bulkcity"
+                    }
+                  ]
+                }
+              },
+              "2a739d0a": {
+                "questionId": "2a739d0a",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "7894561230"
+                    }
+                  ]
+                }
+              },
+              "48b3a242": {
+                "questionId": "48b3a242",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "test bulk"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-26T05:55:53.948Z",
+            "lastSubmittedTime": "2026-06-26T05:55:53.948447Z",
+            "responseId": "ACYDBNilGSNzMDovHNF5uHime8yiujbRb7t1DkomNcq1ZKrQWFm9eeMTI5exHznArkJ7k8M"
+          },
+          {
+            "answers": {
+              "15931833": {
+                "questionId": "15931833",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Patel"
+                    }
+                  ]
+                }
+              },
+              "169291c1": {
+                "questionId": "169291c1",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "hirenpatel@gmail.com"
+                    }
+                  ]
+                }
+              },
+              "1dd079ac": {
+                "questionId": "1dd079ac",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Hiren"
+                    }
+                  ]
+                }
+              },
+              "24376c99": {
+                "questionId": "24376c99",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Surat"
+                    }
+                  ]
+                }
+              },
+              "2a739d0a": {
+                "questionId": "2a739d0a",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "9998887776"
+                    }
+                  ]
+                }
+              },
+              "48b3a242": {
+                "questionId": "48b3a242",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "ABC Ltd"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-22T09:32:22.081Z",
+            "lastSubmittedTime": "2026-06-22T09:32:22.081496Z",
+            "responseId": "ACYDBNhmKBIWgozTgClPKiXgIMakphksWT3IQSK4o4VUvLKxHiFiGsaVazEqH0MS9aL3ehQ"
+          }
+        ]
+      },
+      "response_model": "GoogleFormResponses",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Wed, 15 Jul 2026 10:55:43 GMT",
+        "Server": "ESF",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0"
+      }
+    },
+    {
+      "step": "create#0:search",
+      "action": "search_lead",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 1065,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads/search?criteria=%28Email%3Aequals%3Atestbulk%40gmail.com%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "518241423e084c15080874337d1a1e87",
+        "Clientversion": "13912948",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Date": "Wed, 15 Jul 2026 10:55:44 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=99, totalTime;desc=\"Total Execution Time\";dur=210,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=dcd193a3-b581-4bf0-bc11-6aae5797b7b2;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-07-15T16:53:36+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#0",
+      "action": "create_lead",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 569,
+      "request_size_bytes": 141,
+      "response_size_bytes": 326,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads",
+      "request_body": {
+        "data": [
+          {
+            "City": "bulkcity",
+            "Company": "test bulk",
+            "Email": "testbulk@gmail.com",
+            "First_Name": "test",
+            "Last_Name": "bulk",
+            "Phone": "7894561230"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-07-15T16:25:46+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-07-15T16:25:46+05:30",
+              "id": "1261847000000648004"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "ZohoLeadCreate",
+      "response_model": "ZohoLeadResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "518241423e084c15080874337d1a1e87",
+        "Clientversion": "13912948",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "326",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Wed, 15 Jul 2026 10:55:46 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=134, totalTime;desc=\"Total Execution Time\";dur=239,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=97e193f9-6ac7-4612-a8a2-340bb7df1cc8;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-07-15T16:53:36+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#1:search",
+      "action": "search_lead",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 315,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads/search?criteria=%28Email%3Aequals%3Ahirenpatel%40gmail.com%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "518241423e084c15080874337d1a1e87",
+        "Clientversion": "13912948",
+        "Content-Language": "en-US",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Date": "Wed, 15 Jul 2026 10:55:46 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=30, totalTime;desc=\"Total Execution Time\";dur=68,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=b7ee4d9f-cc89-485f-9c07-904816f1d4d2;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-07-15T16:53:36+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    },
+    {
+      "step": "create#1",
+      "action": "create_lead",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 587,
+      "request_size_bytes": 140,
+      "response_size_bytes": 326,
+      "request_url": "https://www.zohoapis.in/crm/v3/Leads",
+      "request_body": {
+        "data": [
+          {
+            "City": "Surat",
+            "Company": "ABC Ltd",
+            "Email": "hirenpatel@gmail.com",
+            "First_Name": "Hiren",
+            "Last_Name": "Patel",
+            "Phone": "9998887776"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-07-15T16:25:47+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-07-15T16:25:47+05:30",
+              "id": "1261847000000654001"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "ZohoLeadCreate",
+      "response_model": "ZohoLeadResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "518241423e084c15080874337d1a1e87",
+        "Clientversion": "13912948",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "326",
+        "Content-Security-Policy": "default-src 'none';frame-ancestors 'self'; report-uri https://logsapi.zoho.com/csplog?service=crm",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Wed, 15 Jul 2026 10:55:47 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Referrer-Policy": "strict-origin",
+        "Server": "ZGS",
+        "Server-Timing": "cpuTime;desc=\"CPU Time\";dur=135, totalTime;desc=\"Total Execution Time\";dur=252,murphySpanId;desc=\"\";dur=0",
+        "Set-Cookie": "crmcsr=063dbdab-4155-45e1-b1ca-3219f7ae5c04;path=/;SameSite=Strict;Secure;priority=high",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "X-Accesstoken-Reset": "2026-07-15T16:53:36+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0; mode=block"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 6,
+    "passed_steps": 6,
+    "failed_steps": 0,
+    "total_assertions": 5,
+    "passed_assertions": 5,
+    "failed_assertions": 0,
+    "total_duration_ms": 3101,
+    "slowest_step": "create#0:search",
+    "p50_ms": 569,
+    "p95_ms": 1065,
+    "success": true
+  },
+  "models": {
+    "GoogleForm": {
+      "description": "Form definition with questions",
+      "formId": "string",
+      "info": {}
+    },
+    "GoogleFormResponses": {
+      "description": "List of form submissions",
+      "responses": "array"
+    },
+    "ZohoLeadCreate": {
+      "data": "array",
+      "description": "Zoho CRM lead create payload"
+    },
+    "ZohoLeadResponse": {
+      "data": "array",
+      "description": "Zoho CRM create response"
+    }
+  },
+  "route_schemas": {
+    "create_lead": {
+      "request_body": "ZohoLeadCreate",
+      "responses": {
+        "201": "ZohoLeadResponse"
+      }
+    },
+    "fetch_form_responses": {
+      "responses": {
+        "200": "GoogleFormResponses"
+      }
+    },
+    "get_form": {
+      "responses": {
+        "200": "GoogleForm"
+      }
+    }
+  }
+}
