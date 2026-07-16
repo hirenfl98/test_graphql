@@ -1,0 +1,729 @@
+{
+  "success": true,
+  "message": "OK — create: 2 created, 0 skipped, 0 failed (of 2)",
+  "test_name": "gravity_forms_to_bigin_contacts",
+  "run_id": "tr_zsvf6736",
+  "run": {
+    "run_id": "tr_zsvf6736",
+    "test_name": "gravity_forms_to_bigin_contacts",
+    "flow_name": "forms_to_crm",
+    "generated_at": "2026-06-26T12:51:05Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "",
+      "base_url": "",
+      "version": ""
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "get_form status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "fetch status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s1",
+      "label": "create#0 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "create#1 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "v5",
+      "label": "fetch verify",
+      "expression": "fetch.response.body.entries.0.id != null",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {
+      "get_form.response.body.id": "30",
+      "get_form_id": "30"
+    },
+    "created_ids": [],
+    "last_step": "create"
+  },
+  "steps": [
+    {
+      "step": "get_form",
+      "action": "get_form",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 501,
+      "response_size_bytes": 5643,
+      "request_url": "https://proactive-cod-76633b.gravitydemo.com/wp-json/gf/v2/forms/30",
+      "response_body": {
+        "button": {
+          "imageUrl": "",
+          "layoutGridColumnSpan": 12,
+          "location": "bottom",
+          "text": "",
+          "type": "text",
+          "width": "auto"
+        },
+        "confirmations": {
+          "6a3e74544365e": {
+            "id": "6a3e74544365e",
+            "isDefault": true,
+            "message": "Thanks for contacting us! We will get in touch with you shortly.",
+            "name": "Default Confirmation",
+            "pageId": "",
+            "queryString": "",
+            "type": "message",
+            "url": ""
+          }
+        },
+        "date_created": "2026-06-26 12:45:08",
+        "description": "",
+        "fields": [
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 30,
+            "id": 1,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "First Name",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "8a5c4d8a",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 30,
+            "id": 3,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Last Name",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "750e0060",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 30,
+            "id": 4,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Email",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "9c64d61b",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 30,
+            "id": 5,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Mobile",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "0c9bb12c",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          },
+          {
+            "adminLabel": "",
+            "allowsPrepopulate": false,
+            "autocompleteAttribute": "",
+            "calculationFormula": "",
+            "calculationRounding": "",
+            "choices": "",
+            "conditionalLogic": "",
+            "cssClass": "",
+            "defaultValue": "",
+            "description": "",
+            "descriptionPlacement": "",
+            "disableQuantity": false,
+            "displayAllCategories": false,
+            "enableAutocomplete": false,
+            "enableCalculation": "",
+            "enableDisplayInColumns": "",
+            "enableEnhancedUI": 0,
+            "enablePasswordInput": "",
+            "errorMessage": "",
+            "errors": [],
+            "fields": "",
+            "formId": 30,
+            "id": 6,
+            "inputMask": false,
+            "inputMaskIsCustom": false,
+            "inputMaskValue": "",
+            "inputName": "",
+            "inputType": "text",
+            "inputs": null,
+            "isRequired": false,
+            "is_payment": false,
+            "label": "Company Name",
+            "labelPlacement": "",
+            "layoutGridColumnSpan": "",
+            "layoutGroupId": "e0e9876b",
+            "maxFiles": "",
+            "maxLength": "",
+            "multipleFiles": false,
+            "noDuplicates": false,
+            "pageNumber": 1,
+            "placeholder": "",
+            "productField": "",
+            "size": "large",
+            "subLabelPlacement": "",
+            "type": "text",
+            "useRichTextEditor": false,
+            "visibility": "visible"
+          }
+        ],
+        "firstPageCssClass": null,
+        "id": 30,
+        "is_active": "1",
+        "is_trash": "0",
+        "lastPageButton": null,
+        "markupVersion": 2,
+        "nextFieldId": 7,
+        "notifications": {
+          "6a3e745442fd0": {
+            "event": "form_submission",
+            "id": "6a3e745442fd0",
+            "isActive": true,
+            "message": "{all_fields}",
+            "name": "Admin Notification",
+            "subject": "New submission from {form_title}",
+            "to": "{admin_email}",
+            "toType": "email"
+          }
+        },
+        "pagination": null,
+        "postContentTemplate": "",
+        "postContentTemplateEnabled": false,
+        "postTitleTemplate": "",
+        "postTitleTemplateEnabled": false,
+        "title": "contact_collect",
+        "useCurrentUserAsAuthor": true,
+        "version": "2.10.4"
+      },
+      "response_model": "GravityForm",
+      "response_headers": {
+        "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+        "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+        "Allow": "GET, PUT, DELETE",
+        "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:50:59 GMT",
+        "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+        "Link": "<https://proactive-cod-76633b.gravitydemo.com/wp-json/>; rel=\"https://api.w.org/\"",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Microcache-Status": "MISS",
+        "X-Robots-Tag": "noindex",
+        "X-Served-By": "apache"
+      }
+    },
+    {
+      "step": "fetch",
+      "action": "fetch_entries",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 297,
+      "response_size_bytes": 1558,
+      "request_url": "https://proactive-cod-76633b.gravitydemo.com/wp-json/gf/v2/forms/30/entries",
+      "response_body": {
+        "entries": [
+          {
+            "1": "Darshak",
+            "3": "Ptl",
+            "4": "darshakptl@gmail.com",
+            "5": "1597534562",
+            "6": "Global Info",
+            "created_by": null,
+            "currency": "USD",
+            "date_created": "2026-06-26 12:47:49",
+            "date_updated": "2026-06-26 12:47:49",
+            "form_id": "30",
+            "helpscout_conversation_id": false,
+            "id": "5",
+            "ip": "152.58.36.212",
+            "is_fulfilled": null,
+            "is_read": "0",
+            "is_starred": "0",
+            "payment_amount": null,
+            "payment_date": null,
+            "payment_method": null,
+            "payment_status": null,
+            "post_id": null,
+            "source_id": "1190",
+            "source_url": "https://proactive-cod-76633b.gravitydemo.com/contact_collect/",
+            "status": "active",
+            "submission_speeds": "{\"1\":[32187]}",
+            "transaction_id": null,
+            "transaction_type": null,
+            "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+          },
+          {
+            "1": "Hiren",
+            "3": "Patel",
+            "4": "hirenfl98@gmail.com",
+            "5": "7489652310",
+            "6": "Apilabs",
+            "created_by": null,
+            "currency": "USD",
+            "date_created": "2026-06-26 12:47:10",
+            "date_updated": "2026-06-26 12:47:10",
+            "form_id": "30",
+            "helpscout_conversation_id": false,
+            "id": "4",
+            "ip": "152.58.36.212",
+            "is_fulfilled": null,
+            "is_read": "0",
+            "is_starred": "0",
+            "payment_amount": null,
+            "payment_date": null,
+            "payment_method": null,
+            "payment_status": null,
+            "post_id": null,
+            "source_id": "1190",
+            "source_url": "https://proactive-cod-76633b.gravitydemo.com/contact_collect/",
+            "status": "active",
+            "submission_speeds": "{\"1\":[27622]}",
+            "transaction_id": null,
+            "transaction_type": null,
+            "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+          }
+        ],
+        "total_count": 2
+      },
+      "response_model": "GravityEntries",
+      "response_headers": {
+        "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+        "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+        "Allow": "GET, POST",
+        "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:51:00 GMT",
+        "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+        "Link": "<https://proactive-cod-76633b.gravitydemo.com/wp-json/>; rel=\"https://api.w.org/\"",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Microcache-Status": "EXPIRED",
+        "X-Robots-Tag": "noindex",
+        "X-Served-By": "apache"
+      }
+    },
+    {
+      "step": "create#0:search",
+      "action": "search_contact",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 674,
+      "request_url": "https://www.zohoapis.in/bigin/v2/Contacts/search?criteria=%28Email%3Aequals%3Adarshakptl%40gmail.com%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b1f11fe16c2a4d372fd4be8669ca4b99",
+        "Clientversion": "13599301",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Date": "Fri, 26 Jun 2026 12:51:00 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Server": "ZGS",
+        "Set-Cookie": "zalb_305963e4ad=1d6af5b5cd0832e8cabad0fe0579d4e5; Path=/; Secure; HttpOnly",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "Vary": "Sec-Fetch-Dest,Sec-Fetch-Mode,Sec-Fetch-Site,Sec-Fetch-User",
+        "X-Accesstoken-Reset": "2026-06-26T19:14:29+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN"
+      }
+    },
+    {
+      "step": "create#0",
+      "action": "create_contact",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 463,
+      "request_size_bytes": 135,
+      "response_size_bytes": 326,
+      "request_url": "https://www.zohoapis.in/bigin/v2/Contacts",
+      "request_body": {
+        "data": [
+          {
+            "Account_Name": "Global Info",
+            "Email": "darshakptl@gmail.com",
+            "First_Name": "Darshak",
+            "Last_Name": "Ptl",
+            "Mobile": "1597534562"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1297440000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-26T18:21:01+05:30",
+              "Modified_By": {
+                "id": "1297440000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-26T18:21:01+05:30",
+              "id": "1297440000000490040"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "BiginContactCreate",
+      "response_model": "BiginContactResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b1f11fe16c2a4d372fd4be8669ca4b99",
+        "Clientversion": "13599301",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "326",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:51:01 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Server": "ZGS",
+        "Set-Cookie": "zalb_305963e4ad=2bb80c7a2a6daeb891b5404b7b216303; Path=/; Secure; HttpOnly",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "Vary": "Sec-Fetch-Dest,Sec-Fetch-Mode,Sec-Fetch-Site,Sec-Fetch-User",
+        "X-Accesstoken-Reset": "2026-06-26T19:14:29+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN"
+      }
+    },
+    {
+      "step": "create#1:search",
+      "action": "search_contact",
+      "method": "GET",
+      "status_code": 204,
+      "passed": true,
+      "duration_ms": 231,
+      "request_url": "https://www.zohoapis.in/bigin/v2/Contacts/search?criteria=%28Email%3Aequals%3Ahirenfl98%40gmail.com%29",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b1f11fe16c2a4d372fd4be8669ca4b99",
+        "Clientversion": "13599301",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Date": "Fri, 26 Jun 2026 12:51:01 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Server": "ZGS",
+        "Set-Cookie": "zalb_305963e4ad=1d6af5b5cd0832e8cabad0fe0579d4e5; Path=/; Secure; HttpOnly",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "Vary": "Sec-Fetch-Dest,Sec-Fetch-Mode,Sec-Fetch-Site,Sec-Fetch-User",
+        "X-Accesstoken-Reset": "2026-06-26T19:14:29+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Frame-Options": "SAMEORIGIN"
+      }
+    },
+    {
+      "step": "create#1",
+      "action": "create_contact",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 338,
+      "request_size_bytes": 130,
+      "response_size_bytes": 326,
+      "request_url": "https://www.zohoapis.in/bigin/v2/Contacts",
+      "request_body": {
+        "data": [
+          {
+            "Account_Name": "Apilabs",
+            "Email": "hirenfl98@gmail.com",
+            "First_Name": "Hiren",
+            "Last_Name": "Patel",
+            "Mobile": "7489652310"
+          }
+        ]
+      },
+      "response_body": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1297440000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-26T18:21:01+05:30",
+              "Modified_By": {
+                "id": "1297440000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-26T18:21:01+05:30",
+              "id": "1297440000000490045"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      },
+      "request_model": "BiginContactCreate",
+      "response_model": "BiginContactResponse",
+      "response_headers": {
+        "Cache-Control": "no-store, no-cache, must-revalidate, private",
+        "Clientsubversion": "b1f11fe16c2a4d372fd4be8669ca4b99",
+        "Clientversion": "13599301",
+        "Content-Disposition": "attachment; filename=response.json",
+        "Content-Language": "en-US",
+        "Content-Length": "326",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 12:51:01 GMT",
+        "Expires": "Thu, 01 Jan 1970 00:00:00 GMT",
+        "Pragma": "no-cache",
+        "Server": "ZGS",
+        "Set-Cookie": "zalb_305963e4ad=2bb80c7a2a6daeb891b5404b7b216303; Path=/; Secure; HttpOnly",
+        "Strict-Transport-Security": "max-age=64072000; includeSubDomains; preload",
+        "Vary": "Sec-Fetch-Dest,Sec-Fetch-Mode,Sec-Fetch-Site,Sec-Fetch-User",
+        "X-Accesstoken-Reset": "2026-06-26T19:14:29+05:30",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 6,
+    "passed_steps": 6,
+    "failed_steps": 0,
+    "total_assertions": 5,
+    "passed_assertions": 5,
+    "failed_assertions": 0,
+    "total_duration_ms": 2504,
+    "slowest_step": "create#0:search",
+    "p50_ms": 463,
+    "p95_ms": 674,
+    "success": true
+  },
+  "models": {
+    "BiginContactCreate": {
+      "data": "array",
+      "description": "Bigin Contact create payload"
+    },
+    "BiginContactResponse": {
+      "data": "array",
+      "description": "Bigin Contact response"
+    },
+    "BiginContactSearch": {
+      "criteria": "string",
+      "description": "Bigin Contact search"
+    },
+    "GravityEntries": {
+      "description": "List of Gravity Form entries",
+      "entries": "array"
+    },
+    "GravityForm": {
+      "description": "Gravity Form definition",
+      "fields": "array",
+      "id": "string",
+      "title": "string"
+    }
+  },
+  "route_schemas": {
+    "create_contact": {
+      "request_body": "BiginContactCreate",
+      "responses": {
+        "201": "BiginContactResponse"
+      }
+    },
+    "fetch_entries": {
+      "responses": {
+        "200": "GravityEntries"
+      }
+    },
+    "get_form": {
+      "responses": {
+        "200": "GravityForm"
+      }
+    },
+    "search_contact": {
+      "responses": {
+        "200": "BiginContactResponse"
+      }
+    }
+  }
+}
