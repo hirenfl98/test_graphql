@@ -1,0 +1,208 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "auth_login",
+  "run_id": "tr_ldcs8717",
+  "run": {
+    "run_id": "tr_ldcs8717",
+    "test_name": "auth_login",
+    "flow_name": "auth_login",
+    "generated_at": "2026-06-25T13:46:56Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "Supabase Auth API",
+      "base_url": "https://tvlphasahvaffdzzgugf.supabase.co",
+      "version": "v1",
+      "auth_scheme": "bearer"
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "login status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "v2",
+      "label": "login verify",
+      "expression": "login.response.body.access_token != null",
+      "passed": true
+    },
+    {
+      "id": "v3",
+      "label": "login verify",
+      "expression": "login.response.body.token_type == 'bearer'",
+      "passed": true
+    },
+    {
+      "id": "v4",
+      "label": "login verify",
+      "expression": "login.response.body.user.email == 'test@example.com'",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {},
+    "created_ids": [],
+    "last_step": "login"
+  },
+  "steps": [
+    {
+      "step": "login",
+      "action": "login",
+      "method": "POST",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 1117,
+      "request_size_bytes": 50,
+      "response_size_bytes": 1893,
+      "request_url": "https://tvlphasahvaffdzzgugf.supabase.co/auth/v1/token?grant_type=password",
+      "request_body": {
+        "email": "test@example.com",
+        "password": "Test123@"
+      },
+      "response_body": {
+        "access_token": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImI1MTI5OThmLWJlZWYtNGYwZi1hYTBlLTg1ZDE4MTIxMzE5OCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3R2bHBoYXNhaHZhZmZkenpndWdmLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI1Y2I1YjI0MC04YmQ0LTQxNzItYTIxOS1lNzU2MTIxNDY5N2EiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzgyMzk4ODEyLCJpYXQiOjE3ODIzOTUyMTIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWxfdmVyaWZpZWQiOnRydWV9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzgyMzk1MjEyfV0sInNlc3Npb25faWQiOiJkYWFhZmJjYy1hNTgxLTQ0YTMtYTZhMS1iNDMxN2I0NTcxY2QiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.gcfuyGR_yhWhe_Rc-K7a9Ovz-3z41TNGnbCQRKccGexaBfcZoJm-2UbaQFiZXnBmHqK9eBrXlXuXL7O-0vYXgQ",
+        "expires_at": 1782398812,
+        "expires_in": 3600,
+        "refresh_token": "hnkbytyq2ndf",
+        "token_type": "bearer",
+        "user": {
+          "app_metadata": {
+            "provider": "email",
+            "providers": [
+              "email"
+            ]
+          },
+          "aud": "authenticated",
+          "confirmed_at": "2026-06-11T09:21:05.79708Z",
+          "created_at": "2026-06-11T09:21:05.77931Z",
+          "email": "test@example.com",
+          "email_confirmed_at": "2026-06-11T09:21:05.79708Z",
+          "id": "5cb5b240-8bd4-4172-a219-e7561214697a",
+          "identities": [
+            {
+              "created_at": "2026-06-11T09:21:05.790467Z",
+              "email": "test@example.com",
+              "id": "5cb5b240-8bd4-4172-a219-e7561214697a",
+              "identity_data": {
+                "email": "test@example.com",
+                "email_verified": false,
+                "phone_verified": false,
+                "sub": "5cb5b240-8bd4-4172-a219-e7561214697a"
+              },
+              "identity_id": "724bc0eb-afef-4104-bdf1-aecf3229e096",
+              "last_sign_in_at": "2026-06-11T09:21:05.790407Z",
+              "provider": "email",
+              "updated_at": "2026-06-11T09:21:05.790467Z",
+              "user_id": "5cb5b240-8bd4-4172-a219-e7561214697a"
+            }
+          ],
+          "is_anonymous": false,
+          "last_sign_in_at": "2026-06-25T13:46:52.621428152Z",
+          "phone": "",
+          "role": "authenticated",
+          "updated_at": "2026-06-25T13:46:52.668017Z",
+          "user_metadata": {
+            "email_verified": true
+          }
+        },
+        "weak_password": null
+      },
+      "request_model": "LoginBody",
+      "response_model": "AuthToken",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a1146bb9c85cf674-IAD",
+        "Content-Type": "application/json",
+        "Date": "Thu, 25 Jun 2026 13:46:52 GMT",
+        "Sb-Auth-Refresh-Token-Prefix": "hnkby",
+        "Sb-Auth-Session-Id": "daaafbcc-a581-44a3-a6a1-b4317b4571cd",
+        "Sb-Auth-User-Id": "5cb5b240-8bd4-4172-a219-e7561214697a",
+        "Sb-Gateway-Version": "1",
+        "Sb-Project-Ref": "tvlphasahvaffdzzgugf",
+        "Sb-Request-Id": "019eff08-9024-7f1d-b0ef-2945b1c83264",
+        "Server": "cloudflare",
+        "Set-Cookie": "__cf_bm=jjUO3HuAY8S2BBWxeeCxcXgKzRh53yPRvfoDLoRvqTw-1782395211.8078094-1.0.1.1-OqOxl0WKU3cNgBtGyR_0Z21PUxK15YvjNAs.wqOp5xo7ubUFqv0_oPe2d70Mux1x6Fu63UlB1hFRARIpieBjuDclnuqa7rTz2BVFyH7rAPrO.79tmfStUIFpOPbfWJw1; HttpOnly; SameSite=None; Secure; Path=/; Domain=supabase.co; Expires=Thu, 25 Jun 2026 14:16:52 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "Origin, Accept-Encoding",
+        "X-Content-Type-Options": "nosniff",
+        "X-Envoy-Attempt-Count": "1",
+        "X-Envoy-Upstream-Service-Time": "271"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 1,
+    "passed_steps": 1,
+    "failed_steps": 0,
+    "total_assertions": 4,
+    "passed_assertions": 4,
+    "failed_assertions": 0,
+    "total_duration_ms": 1117,
+    "slowest_step": "login",
+    "p50_ms": 1117,
+    "p95_ms": 1117,
+    "success": true
+  },
+  "models": {
+    "AuthToken": {
+      "access_token": {
+        "description": "JWT bearer token.",
+        "type": "string"
+      },
+      "description": "Supabase password login token response.",
+      "expires_in": {
+        "description": "Token lifetime in seconds.",
+        "type": "integer"
+      },
+      "refresh_token": {
+        "description": "Refresh token when applicable.",
+        "type": "string"
+      },
+      "token_type": {
+        "description": "Token type, typically bearer.",
+        "type": "string"
+      },
+      "user": {
+        "description": "Authenticated user profile.",
+        "type": "object"
+      }
+    },
+    "AuthUser": {
+      "description": "Authenticated Supabase user from login response.",
+      "email": {
+        "description": "User email address.",
+        "type": "string"
+      },
+      "id": {
+        "description": "User UUID.",
+        "type": "uuid"
+      }
+    },
+    "LoginBody": {
+      "description": "Email/password grant payload.",
+      "email": {
+        "description": "User email address.",
+        "type": "string"
+      },
+      "password": {
+        "description": "User password.",
+        "type": "string"
+      }
+    }
+  },
+  "route_schemas": {
+    "login": {
+      "request_body": "LoginBody",
+      "responses": {
+        "200": "AuthToken"
+      }
+    }
+  }
+}
