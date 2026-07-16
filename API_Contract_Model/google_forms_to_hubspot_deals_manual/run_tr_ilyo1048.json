@@ -1,0 +1,698 @@
+{
+  "success": true,
+  "message": "OK — create: 2 created, 0 skipped, 0 failed (of 2)",
+  "test_name": "google_forms_to_hubspot_deals",
+  "run_id": "tr_ilyo1048",
+  "run": {
+    "run_id": "tr_ilyo1048",
+    "test_name": "google_forms_to_hubspot_deals",
+    "flow_name": "forms_to_hubspot",
+    "generated_at": "2026-06-26T09:36:56Z",
+    "environment": "dev",
+    "triggered_by": "manual",
+    "tags": [],
+    "api": {
+      "name": "",
+      "base_url": "",
+      "version": ""
+    }
+  },
+  "assertions": [
+    {
+      "id": "s1",
+      "label": "get_form status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "fetch status",
+      "expression": "= 200",
+      "passed": true
+    },
+    {
+      "id": "s1",
+      "label": "create#0 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "s2",
+      "label": "create#1 status",
+      "expression": "= 201",
+      "passed": true
+    },
+    {
+      "id": "v5",
+      "label": "fetch verify",
+      "expression": "fetch.response.body.responses.0.responseId != null",
+      "passed": true
+    }
+  ],
+  "state": {
+    "resolved": {
+      "create.response.body.id": "332767440631",
+      "create_id": "332767440631"
+    },
+    "created_ids": [
+      "332633479883",
+      "332767440631"
+    ],
+    "last_step": "create"
+  },
+  "steps": [
+    {
+      "step": "get_form",
+      "action": "get_form",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 415,
+      "response_size_bytes": 2320,
+      "request_url": "https://forms.googleapis.com/v1/forms/1HAZgztYAy1bW6Ct1vuPqqQeywxL37snEGVC7X3Ln4Yw",
+      "response_body": {
+        "formId": "1HAZgztYAy1bW6Ct1vuPqqQeywxL37snEGVC7X3Ln4Yw",
+        "info": {
+          "documentTitle": "Sales Pipeline Deals",
+          "title": "Sales Pipeline Deals"
+        },
+        "items": [
+          {
+            "itemId": "2c6d07d7",
+            "questionItem": {
+              "question": {
+                "questionId": "26364c8d",
+                "textQuestion": {}
+              }
+            },
+            "title": "Deal name"
+          },
+          {
+            "itemId": "0af2e87c",
+            "questionItem": {
+              "question": {
+                "choiceQuestion": {
+                  "options": [
+                    {
+                      "value": "Sales Pipeline"
+                    }
+                  ],
+                  "type": "RADIO"
+                },
+                "questionId": "6e818508"
+              }
+            },
+            "title": "Pipeline"
+          },
+          {
+            "itemId": "775b6d0b",
+            "questionItem": {
+              "question": {
+                "choiceQuestion": {
+                  "options": [
+                    {
+                      "value": "Appointment Scheduled"
+                    },
+                    {
+                      "value": "Qualified To Buy"
+                    },
+                    {
+                      "value": "Presentation Scheduled"
+                    },
+                    {
+                      "value": "Decision Maker Bought-In"
+                    },
+                    {
+                      "value": "Contract Sent"
+                    },
+                    {
+                      "value": "Closed Won"
+                    },
+                    {
+                      "value": "Closed Lost"
+                    }
+                  ],
+                  "type": "RADIO"
+                },
+                "questionId": "35a2a505"
+              }
+            },
+            "title": "Deal stage"
+          },
+          {
+            "itemId": "0671c21d",
+            "questionItem": {
+              "question": {
+                "questionId": "58491774",
+                "textQuestion": {}
+              }
+            },
+            "title": "Amount"
+          },
+          {
+            "itemId": "0cbd031d",
+            "questionItem": {
+              "question": {
+                "dateQuestion": {
+                  "includeYear": true
+                },
+                "questionId": "03b4cd1e"
+              }
+            },
+            "title": "Close date"
+          }
+        ],
+        "publishSettings": {
+          "publishState": {
+            "isAcceptingResponses": true,
+            "isPublished": true
+          }
+        },
+        "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLScdl3nbklc10MsZxZrFL0VNIQxcstfQaCw8SNUtMCPPgFe95A/viewform",
+        "revisionId": "00000022",
+        "settings": {
+          "emailCollectionType": "DO_NOT_COLLECT"
+        }
+      },
+      "response_model": "GoogleForm",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 09:36:49 GMT",
+        "Server": "ESF",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0"
+      }
+    },
+    {
+      "step": "fetch",
+      "action": "fetch_form_responses",
+      "method": "GET",
+      "status_code": 200,
+      "expected_status": 200,
+      "passed": true,
+      "duration_ms": 118,
+      "response_size_bytes": 2697,
+      "request_url": "https://forms.googleapis.com/v1/forms/1HAZgztYAy1bW6Ct1vuPqqQeywxL37snEGVC7X3Ln4Yw/responses",
+      "response_body": {
+        "responses": [
+          {
+            "answers": {
+              "58491774": {
+                "questionId": "58491774",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "111"
+                    }
+                  ]
+                }
+              },
+              "03b4cd1e": {
+                "questionId": "03b4cd1e",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "2026-06-30"
+                    }
+                  ]
+                }
+              },
+              "26364c8d": {
+                "questionId": "26364c8d",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "First Deal"
+                    }
+                  ]
+                }
+              },
+              "35a2a505": {
+                "questionId": "35a2a505",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Qualified To Buy"
+                    }
+                  ]
+                }
+              },
+              "6e818508": {
+                "questionId": "6e818508",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Sales Pipeline"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-23T09:24:50.860Z",
+            "lastSubmittedTime": "2026-06-23T09:24:50.860575Z",
+            "responseId": "ACYDBNgNg7DfVqLQVGrdN-MSSEO-xXBqdaQnwlaNV3JMUybAlzywkvr3PaECSP43cuB2eYY"
+          },
+          {
+            "answers": {
+              "58491774": {
+                "questionId": "58491774",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "101"
+                    }
+                  ]
+                }
+              },
+              "03b4cd1e": {
+                "questionId": "03b4cd1e",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "2026-06-28"
+                    }
+                  ]
+                }
+              },
+              "26364c8d": {
+                "questionId": "26364c8d",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Hubspot_Contract_Deal"
+                    }
+                  ]
+                }
+              },
+              "35a2a505": {
+                "questionId": "35a2a505",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Presentation Scheduled"
+                    }
+                  ]
+                }
+              },
+              "6e818508": {
+                "questionId": "6e818508",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Sales Pipeline"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-24T06:56:38.008Z",
+            "lastSubmittedTime": "2026-06-24T06:56:38.008934Z",
+            "responseId": "ACYDBNjO5spzVEpI9lJSuEXLNlSgPcMR17oURq3xbD67w8kF9R0ioO8avzsn1uoGkCF5ENk"
+          }
+        ]
+      },
+      "response_model": "GoogleFormResponses",
+      "response_headers": {
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Fri, 26 Jun 2026 09:36:49 GMT",
+        "Server": "ESF",
+        "Vary": "Origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Xss-Protection": "0"
+      }
+    },
+    {
+      "step": "create#0:search",
+      "action": "search_deal",
+      "method": "POST",
+      "status_code": 200,
+      "passed": true,
+      "duration_ms": 247,
+      "request_size_bytes": 97,
+      "response_size_bytes": 24,
+      "request_url": "https://api.hubapi.com/crm/v3/objects/deals/search",
+      "request_body": {
+        "filterGroups": [
+          {
+            "filters": [
+              {
+                "operator": "EQ",
+                "propertyName": "dealname",
+                "value": "First Deal"
+              }
+            ]
+          }
+        ]
+      },
+      "response_body": {
+        "results": [],
+        "total": 0
+      },
+      "request_model": "HubSpotDealSearch",
+      "response_model": "HubSpotDealResponse",
+      "response_headers": {
+        "Access-Control-Allow-Credentials": "false",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a11b3ad9ae54fbb3-IAD",
+        "Content-Length": "24",
+        "Content-Type": "application/json;charset=utf-8",
+        "Date": "Fri, 26 Jun 2026 09:36:50 GMT",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.01,\"max_age\":604800}",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=5B1ajG7shsYTVbtNhjo%2BnF5CfD%2FBIe1iB2T02HDXzWVI%2BTaeBYvCBeAPWOQuWp%2BKPBTgAxgCNJNO9WgPJ2TBggUVBTyTGXHlZgTnml84iXSo4Xr5U5jYaIL7NIjma3w7\"}]}",
+        "Server": "cloudflare",
+        "Server-Timing": "hcid;desc=\"019f034a-0466-7e4d-8e65-06c90839be49\", cfr;desc=\"a11b3ad9f598fbb3-IAD\"",
+        "Set-Cookie": "__cf_bm=TT3nJwNNnSj71eq.iXgE49x.jdeqyvNv9ssa.X3ua38-1782466610.1870818-1.0.1.1-FOj_uUevljFn7EMcugMVyMD1T1k2tFWTOy5T7y8p0rF2k7fpWteQkRPWrsm9vxIeFP32qtSLK_Lle0T6bWdpWm2BQu7N0ih.0jol8AUDF2HLPnl.GiEEcMKmmr6Ors5s; HttpOnly; SameSite=None; Secure; Path=/; Domain=hubapi.com; Expires=Fri, 26 Jun 2026 10:06:50 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Hubspot-Correlation-Id": "019f034a-0466-7e4d-8e65-06c90839be49",
+        "X-Hubspot-Ratelimit-Daily": "1000000",
+        "X-Hubspot-Ratelimit-Daily-Remaining": "999983"
+      }
+    },
+    {
+      "step": "create#0",
+      "action": "create_deal",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 298,
+      "request_size_bytes": 131,
+      "response_size_bytes": 1909,
+      "request_url": "https://api.hubapi.com/crm/v3/objects/deals",
+      "request_body": {
+        "properties": {
+          "amount": "111",
+          "closedate": 1782777600000,
+          "dealname": "First Deal",
+          "dealstage": "qualifiedtobuy",
+          "pipeline": "default"
+        }
+      },
+      "response_body": {
+        "archived": false,
+        "createdAt": "2026-06-26T09:36:51.154Z",
+        "id": "332633479883",
+        "properties": {
+          "amount": "111",
+          "amount_in_home_currency": "111",
+          "closedate": "2026-06-30T00:00:00Z",
+          "createdate": "2026-06-26T09:36:51.154Z",
+          "days_to_close": "3",
+          "deal_currency_code": "USD",
+          "dealname": "First Deal",
+          "dealstage": "qualifiedtobuy",
+          "hs_actual_duration": "310988846",
+          "hs_closed_amount": "0",
+          "hs_closed_amount_in_home_currency": "0",
+          "hs_closed_deal_close_date": "0",
+          "hs_closed_deal_create_date": "0",
+          "hs_closed_won_count": "0",
+          "hs_createdate": "2026-06-26T09:36:51.154Z",
+          "hs_days_to_close_raw": "3.599408",
+          "hs_deal_stage_probability_shadow": "0.40000000000000002220446049250313080847263336181640625",
+          "hs_forecast_amount": "111",
+          "hs_has_last_conversation_follow_ups": "false",
+          "hs_has_last_meeting_followups": "false",
+          "hs_is_closed": "false",
+          "hs_is_closed_count": "0",
+          "hs_is_closed_lost": "false",
+          "hs_is_closed_won": "false",
+          "hs_is_deal_split": "false",
+          "hs_is_open_count": "1",
+          "hs_lastmodifieddate": "2026-06-26T09:36:51.154Z",
+          "hs_num_associated_active_deal_registrations": "0",
+          "hs_num_associated_deal_registrations": "0",
+          "hs_num_associated_deal_splits": "0",
+          "hs_num_of_associated_line_items": "0",
+          "hs_num_target_accounts": "0",
+          "hs_number_of_call_engagements": "0",
+          "hs_number_of_inbound_calls": "0",
+          "hs_number_of_outbound_calls": "0",
+          "hs_number_of_overdue_tasks": "0",
+          "hs_object_id": "332633479883",
+          "hs_object_source": "INTEGRATION",
+          "hs_object_source_id": "43546071",
+          "hs_object_source_label": "INTEGRATION",
+          "hs_open_amount_in_home_currency": "111",
+          "hs_open_deal_create_date": "1782466611154",
+          "hs_projected_amount": "0",
+          "hs_projected_amount_in_home_currency": "0",
+          "hs_v2_date_entered_current_stage": "2026-06-26T09:36:51.154Z",
+          "hs_v2_time_in_current_stage": "2026-06-26T09:36:51.154Z",
+          "num_associated_contacts": "0",
+          "num_notes": "0",
+          "pipeline": "default"
+        },
+        "updatedAt": "2026-06-26T09:36:51.154Z",
+        "url": "https://app-na2.hubspot.com/contacts/245901171/record/0-3/332633479883"
+      },
+      "request_model": "HubSpotDealCreate",
+      "response_model": "HubSpotDealResponse",
+      "response_headers": {
+        "Access-Control-Allow-Credentials": "false",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a11b3adf0b5dfbb3-IAD",
+        "Content-Type": "application/json;charset=utf-8",
+        "Date": "Fri, 26 Jun 2026 09:36:51 GMT",
+        "Location": "https://api.hubapi.com/crm/objects/v3/deals/332633479883",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.01,\"max_age\":604800}",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=oshNTHBuH1faERiKfrGlwJgcdZO0L6QQxvqprWngHwITmh9%2FPAw7VYKlLUzl8iWRv9t3wXhg4lvXZj6F7mdrbISxHvidTZRybtKhq9qu7qMGvypK3kjsnPxorqENFiQ%2B\"}]}",
+        "Server": "cloudflare",
+        "Server-Timing": "hcid;desc=\"019f034a-07bf-7a66-bd79-03f0b62b4904\", cfr;desc=\"a11b3adf5085fbb3-IAD\"",
+        "Set-Cookie": "__cf_bm=IdtKvygcnPVZ9ojEAT0rfm4G5u3zSVvgjCTZDIxqjL0-1782466611.050711-1.0.1.1-toQLuGJnwl62Ei5Ozevk6iyQ26kX5BHyxEipF.rUDgC6gA9XlcCcyhXoPEiFFITyd5ortaxY7tScLmLsSA11GWppoJ_xFaAbRusPhrysnByd_SU02oZljnHL6oX6B_O6; HttpOnly; SameSite=None; Secure; Path=/; Domain=hubapi.com; Expires=Fri, 26 Jun 2026 10:06:51 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "origin, accept-encoding",
+        "X-Hubspot-Correlation-Id": "019f034a-07bf-7a66-bd79-03f0b62b4904",
+        "X-Hubspot-Ratelimit-Daily": "1000000",
+        "X-Hubspot-Ratelimit-Daily-Remaining": "999993",
+        "X-Hubspot-Ratelimit-Interval-Milliseconds": "10000",
+        "X-Hubspot-Ratelimit-Max": "190",
+        "X-Hubspot-Ratelimit-Remaining": "189",
+        "X-Hubspot-Ratelimit-Secondly": "19",
+        "X-Hubspot-Ratelimit-Secondly-Remaining": "18"
+      }
+    },
+    {
+      "step": "create#1:search",
+      "action": "search_deal",
+      "method": "POST",
+      "status_code": 200,
+      "passed": true,
+      "duration_ms": 172,
+      "request_size_bytes": 108,
+      "response_size_bytes": 24,
+      "request_url": "https://api.hubapi.com/crm/v3/objects/deals/search",
+      "request_body": {
+        "filterGroups": [
+          {
+            "filters": [
+              {
+                "operator": "EQ",
+                "propertyName": "dealname",
+                "value": "Hubspot_Contract_Deal"
+              }
+            ]
+          }
+        ]
+      },
+      "response_body": {
+        "results": [],
+        "total": 0
+      },
+      "request_model": "HubSpotDealSearch",
+      "response_model": "HubSpotDealResponse",
+      "response_headers": {
+        "Access-Control-Allow-Credentials": "false",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a11b3ae0ffb5fbb3-IAD",
+        "Content-Length": "24",
+        "Content-Type": "application/json;charset=utf-8",
+        "Date": "Fri, 26 Jun 2026 09:36:51 GMT",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.01,\"max_age\":604800}",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=LkSVaFy6xvd1d%2Foxz52CzUWLD5FuuqRq0LzHtFFFRIXFIq%2Bk0ujcUFixPkVrB8pOZUoN5FSF1BnKesMh%2BM6D8KENGTBeKyE0bGYzlBgKtSxDbAkuMY63AWsk3rkTb85i\"}]}",
+        "Server": "cloudflare",
+        "Server-Timing": "hcid;desc=\"019f034a-08f9-715a-95d3-ff4806c7ecaa\", cfr;desc=\"a11b3ae131abfbb3-IAD\"",
+        "Set-Cookie": "__cf_bm=vzRA4CGf1IZIGNAatO8GDGpw.oqYKqm2MPG.khgxlOs-1782466611.3539135-1.0.1.1-0jRZAk1sxiU.kdBmtpdyCwpvSvRMQiDUoKLwZVAiseyYx39U1sMgccNKWzToycpuEpc6uraAI5d4mS4u0ayOetmzxYA6SYelQzTRFjlilTTDR9448de9KE6eLgw50UdA; HttpOnly; SameSite=None; Secure; Path=/; Domain=hubapi.com; Expires=Fri, 26 Jun 2026 10:06:51 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "origin",
+        "X-Content-Type-Options": "nosniff",
+        "X-Hubspot-Correlation-Id": "019f034a-08f9-715a-95d3-ff4806c7ecaa",
+        "X-Hubspot-Ratelimit-Daily": "1000000",
+        "X-Hubspot-Ratelimit-Daily-Remaining": "999978"
+      }
+    },
+    {
+      "step": "create#1",
+      "action": "create_deal",
+      "method": "POST",
+      "status_code": 201,
+      "expected_status": 201,
+      "passed": true,
+      "duration_ms": 302,
+      "request_size_bytes": 149,
+      "response_size_bytes": 1927,
+      "request_url": "https://api.hubapi.com/crm/v3/objects/deals",
+      "request_body": {
+        "properties": {
+          "amount": "101",
+          "closedate": 1782604800000,
+          "dealname": "Hubspot_Contract_Deal",
+          "dealstage": "presentationscheduled",
+          "pipeline": "default"
+        }
+      },
+      "response_body": {
+        "archived": false,
+        "createdAt": "2026-06-26T09:36:51.984Z",
+        "id": "332767440631",
+        "properties": {
+          "amount": "101",
+          "amount_in_home_currency": "101",
+          "closedate": "2026-06-28T00:00:00Z",
+          "createdate": "2026-06-26T09:36:51.984Z",
+          "days_to_close": "1",
+          "deal_currency_code": "USD",
+          "dealname": "Hubspot_Contract_Deal",
+          "dealstage": "presentationscheduled",
+          "hs_actual_duration": "138188016",
+          "hs_closed_amount": "0",
+          "hs_closed_amount_in_home_currency": "0",
+          "hs_closed_deal_close_date": "0",
+          "hs_closed_deal_create_date": "0",
+          "hs_closed_won_count": "0",
+          "hs_createdate": "2026-06-26T09:36:51.984Z",
+          "hs_days_to_close_raw": "1.599398",
+          "hs_deal_stage_probability_shadow": "0.59999999999999997779553950749686919152736663818359375",
+          "hs_forecast_amount": "101",
+          "hs_has_last_conversation_follow_ups": "false",
+          "hs_has_last_meeting_followups": "false",
+          "hs_is_closed": "false",
+          "hs_is_closed_count": "0",
+          "hs_is_closed_lost": "false",
+          "hs_is_closed_won": "false",
+          "hs_is_deal_split": "false",
+          "hs_is_open_count": "1",
+          "hs_lastmodifieddate": "2026-06-26T09:36:51.984Z",
+          "hs_num_associated_active_deal_registrations": "0",
+          "hs_num_associated_deal_registrations": "0",
+          "hs_num_associated_deal_splits": "0",
+          "hs_num_of_associated_line_items": "0",
+          "hs_num_target_accounts": "0",
+          "hs_number_of_call_engagements": "0",
+          "hs_number_of_inbound_calls": "0",
+          "hs_number_of_outbound_calls": "0",
+          "hs_number_of_overdue_tasks": "0",
+          "hs_object_id": "332767440631",
+          "hs_object_source": "INTEGRATION",
+          "hs_object_source_id": "43546071",
+          "hs_object_source_label": "INTEGRATION",
+          "hs_open_amount_in_home_currency": "101",
+          "hs_open_deal_create_date": "1782466611984",
+          "hs_projected_amount": "0",
+          "hs_projected_amount_in_home_currency": "0",
+          "hs_v2_date_entered_current_stage": "2026-06-26T09:36:51.984Z",
+          "hs_v2_time_in_current_stage": "2026-06-26T09:36:51.984Z",
+          "num_associated_contacts": "0",
+          "num_notes": "0",
+          "pipeline": "default"
+        },
+        "updatedAt": "2026-06-26T09:36:51.984Z",
+        "url": "https://app-na2.hubspot.com/contacts/245901171/record/0-3/332767440631"
+      },
+      "request_model": "HubSpotDealCreate",
+      "response_model": "HubSpotDealResponse",
+      "response_headers": {
+        "Access-Control-Allow-Credentials": "false",
+        "Cf-Cache-Status": "DYNAMIC",
+        "Cf-Ray": "a11b3ae42eccfbb3-IAD",
+        "Content-Type": "application/json;charset=utf-8",
+        "Date": "Fri, 26 Jun 2026 09:36:52 GMT",
+        "Location": "https://api.hubapi.com/crm/objects/v3/deals/332767440631",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.01,\"max_age\":604800}",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QlbXDhacZBLYlGqg%2Fu9aRWvLMbyr%2FZ3Jk9l53JH8IZZpyGjjrGArkMF3ag%2FZrsHaCEFqDxSmqAFuOzyFdVM7YPLtp7NZbdln9aUYd25mgDGOC2jhrNACjqyMspxB%2FhwC\"}]}",
+        "Server": "cloudflare",
+        "Server-Timing": "hcid;desc=\"019f034a-0b02-7c71-a1f7-7f3f0957ee6c\", cfr;desc=\"a11b3ae4736bfbb3-IAD\"",
+        "Set-Cookie": "__cf_bm=t.tQL0XIsEt9na6qJCnFlR0EpEQVjTmGXYLsgk52Rys-1782466611.8657227-1.0.1.1-j.e.xlMJwvFyGS1TNYZPezUoBxZAyLwtKB7AUXZtHJWMmzUzAR5S2cMvlO39jG9x1LGjqEcgmVxxPhAE.7YUkkeGCgRatg1WbHR3Z1IqyBLc0OAm7.hAPuI27_KgCvng; HttpOnly; SameSite=None; Secure; Path=/; Domain=hubapi.com; Expires=Fri, 26 Jun 2026 10:06:52 GMT",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+        "Vary": "origin, accept-encoding",
+        "X-Hubspot-Correlation-Id": "019f034a-0b02-7c71-a1f7-7f3f0957ee6c",
+        "X-Hubspot-Ratelimit-Daily": "1000000",
+        "X-Hubspot-Ratelimit-Daily-Remaining": "999992",
+        "X-Hubspot-Ratelimit-Interval-Milliseconds": "10000",
+        "X-Hubspot-Ratelimit-Max": "190",
+        "X-Hubspot-Ratelimit-Remaining": "188",
+        "X-Hubspot-Ratelimit-Secondly": "19",
+        "X-Hubspot-Ratelimit-Secondly-Remaining": "18"
+      }
+    }
+  ],
+  "summary": {
+    "total_steps": 6,
+    "passed_steps": 6,
+    "failed_steps": 0,
+    "total_assertions": 5,
+    "passed_assertions": 5,
+    "failed_assertions": 0,
+    "total_duration_ms": 1552,
+    "slowest_step": "get_form",
+    "p50_ms": 298,
+    "p95_ms": 415,
+    "success": true
+  },
+  "models": {
+    "GoogleForm": {
+      "description": "Form definition with questions",
+      "formId": "string",
+      "info": {}
+    },
+    "GoogleFormResponses": {
+      "description": "List of form submissions",
+      "responses": "array"
+    },
+    "HubSpotDealCreate": {
+      "description": "HubSpot Deal create payload",
+      "properties": "object"
+    },
+    "HubSpotDealResponse": {
+      "description": "HubSpot Deal response",
+      "id": "string",
+      "properties": "object"
+    },
+    "HubSpotDealSearch": {
+      "description": "HubSpot Deal search payload",
+      "filterGroups": "array"
+    }
+  },
+  "route_schemas": {
+    "create_deal": {
+      "request_body": "HubSpotDealCreate",
+      "responses": {
+        "201": "HubSpotDealResponse"
+      }
+    },
+    "fetch_form_responses": {
+      "responses": {
+        "200": "GoogleFormResponses"
+      }
+    },
+    "get_form": {
+      "responses": {
+        "200": "GoogleForm"
+      }
+    },
+    "search_deal": {
+      "request_body": "HubSpotDealSearch",
+      "responses": {
+        "200": "HubSpotDealResponse"
+      }
+    }
+  }
+}
