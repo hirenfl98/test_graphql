@@ -1,0 +1,358 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "google_forms_to_zoho_leads",
+  "run_id": "tr_llhc4643",
+  "duration_ms": 1547,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "get_form",
+      "method": "GET",
+      "url": "https://forms.googleapis.com/v1/forms/1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 452,
+      "expected_status": 200,
+      "response": {
+        "formId": "1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so",
+        "info": {
+          "documentTitle": "Lead Capture Form",
+          "title": "Lead Capture Form"
+        },
+        "items": [
+          {
+            "itemId": "17017697",
+            "questionItem": {
+              "question": {
+                "questionId": "1dd079ac",
+                "textQuestion": {}
+              }
+            },
+            "title": "First Name"
+          },
+          {
+            "itemId": "573f814d",
+            "questionItem": {
+              "question": {
+                "questionId": "15931833",
+                "textQuestion": {}
+              }
+            },
+            "title": "Last Name"
+          },
+          {
+            "itemId": "2561f015",
+            "questionItem": {
+              "question": {
+                "questionId": "169291c1",
+                "textQuestion": {}
+              }
+            },
+            "title": "Email"
+          },
+          {
+            "itemId": "452b9516",
+            "questionItem": {
+              "question": {
+                "questionId": "2a739d0a",
+                "textQuestion": {}
+              }
+            },
+            "title": "Phone"
+          },
+          {
+            "itemId": "53aa5524",
+            "questionItem": {
+              "question": {
+                "questionId": "48b3a242",
+                "textQuestion": {}
+              }
+            },
+            "title": "Company"
+          },
+          {
+            "itemId": "351cca40",
+            "questionItem": {
+              "question": {
+                "questionId": "24376c99",
+                "textQuestion": {}
+              }
+            },
+            "title": "City"
+          }
+        ],
+        "publishSettings": {
+          "publishState": {
+            "isAcceptingResponses": true,
+            "isPublished": true
+          }
+        },
+        "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSeOm1f_b1TeB4BjMhtCmzE_XTNi2H_2YVYMkVUXOFvof9_BLg/viewform",
+        "revisionId": "0000001e",
+        "settings": {
+          "emailCollectionType": "DO_NOT_COLLECT"
+        }
+      }
+    },
+    {
+      "step": "fetch",
+      "method": "GET",
+      "url": "https://forms.googleapis.com/v1/forms/1iu4BbU2o75rJVDir7gjq8DzhKjrjcWJU7Xc0iaC58so/responses",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 166,
+      "expected_status": 200,
+      "response": {
+        "responses": [
+          {
+            "answers": {
+              "15931833": {
+                "questionId": "15931833",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Contract"
+                    }
+                  ]
+                }
+              },
+              "169291c1": {
+                "questionId": "169291c1",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "contract@gmail.com"
+                    }
+                  ]
+                }
+              },
+              "1dd079ac": {
+                "questionId": "1dd079ac",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Contract"
+                    }
+                  ]
+                }
+              },
+              "24376c99": {
+                "questionId": "24376c99",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Cont"
+                    }
+                  ]
+                }
+              },
+              "2a739d0a": {
+                "questionId": "2a739d0a",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "7894561231"
+                    }
+                  ]
+                }
+              },
+              "48b3a242": {
+                "questionId": "48b3a242",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Contract ltd"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-24T05:19:34.061Z",
+            "lastSubmittedTime": "2026-06-24T05:19:34.061995Z",
+            "responseId": "ACYDBNgN6XqpwM4IItiqEViCNGJdSEyN_wHLZrN6nbZNBMS0h6AtZ79j8Eb9pBtqzVx0Nsw"
+          },
+          {
+            "answers": {
+              "15931833": {
+                "questionId": "15931833",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Cena"
+                    }
+                  ]
+                }
+              },
+              "169291c1": {
+                "questionId": "169291c1",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "johncena@gmail.com"
+                    }
+                  ]
+                }
+              },
+              "1dd079ac": {
+                "questionId": "1dd079ac",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "John"
+                    }
+                  ]
+                }
+              },
+              "24376c99": {
+                "questionId": "24376c99",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Delhi"
+                    }
+                  ]
+                }
+              },
+              "2a739d0a": {
+                "questionId": "2a739d0a",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "7774448885"
+                    }
+                  ]
+                }
+              },
+              "48b3a242": {
+                "questionId": "48b3a242",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "XYZ pvt ltd"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-22T09:40:56.786Z",
+            "lastSubmittedTime": "2026-06-22T09:40:56.786733Z",
+            "responseId": "ACYDBNh7v8wA00XJgKj8f86Tr7AelqYegGJwXqsyxYKJsweb-yJO7WhLoCL8uMztdk53hpM"
+          },
+          {
+            "answers": {
+              "15931833": {
+                "questionId": "15931833",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Patel"
+                    }
+                  ]
+                }
+              },
+              "169291c1": {
+                "questionId": "169291c1",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "hirenpatel@gmail.com"
+                    }
+                  ]
+                }
+              },
+              "1dd079ac": {
+                "questionId": "1dd079ac",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Hiren"
+                    }
+                  ]
+                }
+              },
+              "24376c99": {
+                "questionId": "24376c99",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "Surat"
+                    }
+                  ]
+                }
+              },
+              "2a739d0a": {
+                "questionId": "2a739d0a",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "9998887776"
+                    }
+                  ]
+                }
+              },
+              "48b3a242": {
+                "questionId": "48b3a242",
+                "textAnswers": {
+                  "answers": [
+                    {
+                      "value": "ABC Ltd"
+                    }
+                  ]
+                }
+              }
+            },
+            "createTime": "2026-06-22T09:32:22.081Z",
+            "lastSubmittedTime": "2026-06-22T09:32:22.081496Z",
+            "responseId": "ACYDBNhmKBIWgozTgClPKiXgIMakphksWT3IQSK4o4VUvLKxHiFiGsaVazEqH0MS9aL3ehQ"
+          }
+        ]
+      }
+    },
+    {
+      "step": "create",
+      "method": "POST",
+      "url": "https://www.zohoapis.in/crm/v3/Leads",
+      "status": 201,
+      "passed": true,
+      "duration_ms": 929,
+      "expected_status": 201,
+      "request": {
+        "data": [
+          {
+            "City": "Cont",
+            "Company": "Contract ltd",
+            "Email": "contract@gmail.com",
+            "First_Name": "Contract",
+            "Last_Name": "Contract",
+            "Phone": "7894561231"
+          }
+        ]
+      },
+      "response": {
+        "data": [
+          {
+            "code": "SUCCESS",
+            "details": {
+              "Created_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Created_Time": "2026-06-25T19:14:09+05:30",
+              "Modified_By": {
+                "id": "1261847000000452001",
+                "name": "Hiren Patel"
+              },
+              "Modified_Time": "2026-06-25T19:14:09+05:30",
+              "id": "1261847000000624001"
+            },
+            "message": "record added",
+            "status": "success"
+          }
+        ]
+      }
+    }
+  ]
+}
