@@ -1,0 +1,45 @@
+contract:
+  format: apilabs.ai
+  version: "1.0"
+  type: apptalk-contract
+
+run: google_forms_hubspot_deals
+
+apptalk:
+  name: google_forms_hubspot_deals_contract
+  form_provider: google_forms
+  form_auth_arn: arn:apilabs:secret:35cf51ef-445b-4e7e-a15d-b85642e0ff45
+  form_id: "1HAZgztYAy1bW6Ct1vuPqqQeywxL37snEGVC7X3Ln4Yw"
+  form_name: Sales Pipeline Deals
+  crm_provider: hubspot
+  crm_auth_arn: arn:apilabs:secret:263ed614-934e-48b0-a7d9-59ca4438ba60
+  crm_module: Deals
+  cleanup: true
+  mappings:
+    - sourceLabel: Deal name
+      destFieldApiName: Deal name
+
+    - sourceLabel: Pipeline
+      destFieldApiName: Pipeline
+
+    - sourceLabel: Deal stage
+      destFieldApiName: Deal stage
+
+    - sourceLabel: Amount
+      destFieldApiName: Amount
+
+    - sourceLabel: Close date
+      destFieldApiName: Close date
+
+flows:
+  e2e:
+    steps:
+      - step: validate
+      - step: create_config
+      - step: test_sync
+
+tests:
+  google_forms_hubspot_deals:
+    execute: e2e
+    verify:
+      - "test_sync.response.body.success == true"
