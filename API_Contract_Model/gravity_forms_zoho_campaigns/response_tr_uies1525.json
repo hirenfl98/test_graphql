@@ -1,0 +1,102 @@
+{
+  "success": true,
+  "message": "OK",
+  "test_name": "gravity_forms_zoho_campaigns",
+  "run_id": "tr_uies1525",
+  "duration_ms": 0,
+  "steps": 3,
+  "passed": 3,
+  "failed": 0,
+  "requests": [
+    {
+      "step": "validate",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "crm_field_count": 18,
+        "form_field_count": 5,
+        "resolved_mappings": [
+          {
+            "destFieldApiName": "Campaign_Name",
+            "destFieldLabel": "Campaign Name",
+            "required": false,
+            "sourceFieldId": "1",
+            "sourceLabel": "Campaign Name",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Status",
+            "destFieldLabel": "Status",
+            "required": false,
+            "sourceFieldId": "3",
+            "sourceLabel": "Status",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Type",
+            "destFieldLabel": "Type",
+            "required": false,
+            "sourceFieldId": "4",
+            "sourceLabel": "Type",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "Start_Date",
+            "destFieldLabel": "Start Date",
+            "required": false,
+            "sourceFieldId": "5",
+            "sourceLabel": "Start Date",
+            "transform": ""
+          },
+          {
+            "destFieldApiName": "End_Date",
+            "destFieldLabel": "End Date",
+            "required": false,
+            "sourceFieldId": "7",
+            "sourceLabel": "End Date",
+            "transform": ""
+          }
+        ],
+        "success": true
+      }
+    },
+    {
+      "step": "create_config",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "6ddd3da4-b4f6-4e3d-a933-929131d67b40",
+        "name": "gravity_forms_zoho_campaigns_contract",
+        "success": true
+      }
+    },
+    {
+      "step": "test_sync",
+      "method": "INTERNAL",
+      "url": "",
+      "status": 200,
+      "passed": true,
+      "duration_ms": 0,
+      "response": {
+        "config_id": "6ddd3da4-b4f6-4e3d-a933-929131d67b40",
+        "message": "Sync complete: 1 created, 0 skipped, 0 failed (of 1).",
+        "results": [
+          {
+            "draft_created": false,
+            "message_id": "2",
+            "subject": "Campaigns_Gravity → Campaigns 1261847000000617001",
+            "thread_id": ""
+          }
+        ],
+        "success": true,
+        "threads_total": 1
+      }
+    }
+  ]
+}
